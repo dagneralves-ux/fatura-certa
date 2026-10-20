@@ -1,0 +1,33 @@
+FATURA CERTA v2 — como usar
+===========================
+
+ARQUIVOS
+  index.html              o sistema (um arquivo só, ~70 KB, sem internet para funcionar)
+  manifest.json, sw.js    fazem ele instalar como app e abrir offline
+  icon-*.png, favicon.png ícones
+  Meus_dados_iniciais.json  SEUS dados da versão antiga (17 compras, 23 parcelas pagas)
+  Supabase_fatura.sql     (opcional) cria a tabela para sincronizar PC e celular
+
+COMO PUBLICAR (igual ao DS Gestão)
+  1. No Netlify: Add new site > Deploy manually, e arraste a PASTA inteira (não só o index.html).
+     (Dica: pode ser um site novo, por exemplo "fatura-certa".)
+  2. Abra o endereço, e no Brave/Chrome clique no ícone de instalar na barra de endereço.
+     No celular: menu > Instalar app.
+
+PASSAR OS DADOS ANTIGOS
+  Abra o app > ícone de controles (canto superior) > "Restaurar / importar fatura"
+  > escolha Meus_dados_iniciais.json. Pronto: tudo volta, inclusive o que já estava pago.
+  (Se abrir no MESMO endereço/navegador da versão antiga, ele traz os dados sozinho.)
+
+SINCRONIZAR PC <-> CELULAR (opcional)
+  1. Supabase > SQL Editor > cole o conteúdo de Supabase_fatura.sql > Run (uma vez).
+  2. No app: controles > Sincronizar > URL do projeto, chave pública (anon), e o mesmo
+     e-mail/senha que você usa no DS Gestão > Entrar.
+  3. Repita no celular. A partir daí ele sincroniza sozinho. Dá para trabalhar offline.
+
+IMPORTAR FATURA DO BANCO
+  Controles > "Restaurar / importar fatura" > escolha o arquivo OFX ou CSV baixado do banco.
+  Aparece uma lista para marcar o que importar. Linhas "02/06" viram a compra inteira com a
+  1ª parcela já paga. Estornos e repetidas vêm desmarcados.
+
+REGRA MANTIDA: a 1ª parcela sempre cai no mês seguinte à data da compra.
