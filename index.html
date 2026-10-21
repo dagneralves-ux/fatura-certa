@@ -217,7 +217,7 @@ dialog h3{font-size:18px}
 small.hint{color:var(--muted);font-size:12px}
 
 /* toast */
-#toasts{position:fixed;left:0;right:0;bottom:calc(84px + env(safe-area-inset-bottom));display:flex;flex-direction:column;align-items:center;gap:8px;z-index:60;pointer-events:none;padding:0 12px}
+#toasts{position:fixed;inset:auto 0 calc(84px + env(safe-area-inset-bottom)) 0;margin:0;border:0;background:none;overflow:visible;width:auto;height:auto;color:inherit;display:flex;flex-direction:column;align-items:center;gap:8px;z-index:60;pointer-events:none;padding:0 12px}
 .toast{pointer-events:auto;display:flex;align-items:center;gap:12px;background:var(--text);color:var(--bg);padding:10px 14px;border-radius:12px;font-size:14px;font-weight:600;box-shadow:var(--shadow);max-width:560px}
 .toast.err{background:var(--red);color:#fff}
 .toast button{color:var(--gold);font-weight:800;padding:2px 6px}
@@ -355,7 +355,7 @@ small.hint{color:var(--muted);font-size:12px}
   <button role="tab" data-tab="mes" aria-selected="false"><svg class="ic"><use href="#i-cal"/></svg>Por mês</button>
   <button role="tab" data-tab="cartoes" aria-selected="false"><svg class="ic"><use href="#i-card"/></svg>Cartões</button>
 </nav>
-<div id="toasts" role="status" aria-live="polite"></div>
+<div id="toasts" popover="manual" role="status" aria-live="polite"></div>
 <div id="print-area"></div>
 
 <!-- Dialog: compra -->
@@ -413,7 +413,8 @@ small.hint{color:var(--muted);font-size:12px}
         <div><label class="f" for="s-url">URL do projeto</label><input id="s-url" type="url" placeholder="https://xxxx.supabase.co" autocomplete="off"></div>
         <div><label class="f" for="s-key">Chave pública (anon / publishable)</label><input id="s-key" type="text" placeholder="eyJ... ou sb_publishable_..." autocomplete="off"></div>
         <div class="grid2"><div><label class="f" for="s-mail">E-mail</label><input id="s-mail" type="email" autocomplete="username"></div><div><label class="f" for="s-pass">Senha</label><input id="s-pass" type="password" autocomplete="current-password"></div></div>
-        <div class="dfoot"><button class="btn primary" type="submit">Entrar e sincronizar</button></div>
+        <div id="sync-msg" role="alert" style="font-size:13px;font-weight:600"></div>
+        <div class="dfoot"><button class="btn primary" type="submit" id="sync-btn">Entrar e sincronizar</button></div>
       </form>
     </div>
     <div id="sync-on" hidden>
@@ -522,7 +523,7 @@ const catsAll=()=>[...new Set([...CATS_PADRAO,...S.purchases.map(p=>p.categoria)
 function toast(msg,type='ok',withUndo=false){
   const d=document.createElement('div'); d.className='toast'+(type==='err'?' err':'');
   d.innerHTML=`<span>${esc(msg)}</span>`+(withUndo?`<button data-act="undo">Desfazer</button>`:'');
-  $('toasts').appendChild(d); setTimeout(()=>d.remove(),withUndo?7000:3500);
+  const tw=$('toasts'); tw.appendChild(d); try{tw.hidePopover();tw.showPopover()}catch{} setTimeout(()=>d.remove(),withUndo?7000:(type==='err'?9000:3500));
 }
 
 /* ── Render ── */
@@ -876,11 +877,21 @@ function renderSyncUI(){
 }
 $('form-sync').addEventListener('submit',async e=>{
   e.preventDefault(); const url=$('s-url').value.trim(), key=$('s-key').value.trim(), email=$('s-mail').value.trim(), pass=$('s-pass').value;
-  if(!/^https:\/\/[^\s/]+/.test(url)||!key||!email||!pass){toast('Preencha URL (https://…), chave, e-mail e senha.','err');return}
-  sync={url,key,email,session:null};
-  try{const j=await sb('/auth/v1/token?grant_type=password',{method:'POST',body:{email,password:pass},auth:false}); storeSession(j); $('s-pass').value=''; toast('Conectado.'); await syncNow(false)}
-  catch(err){sync.session=null;saveSync();toast('Não consegui entrar: confira e-mail, senha e chave.','err');renderSyncUI()}
+  if(!/^https:\/\/[^\s/]+/.test(url)||!key||!email||!pass){syncMsg('Preencha URL (https://…), chave, e-mail e senha.',true);toast('Preencha URL (https://…), chave, e-mail e senha.','err');return}
+  sync={url,key,email,session:null}; syncMsg('Entrando…'); $('sync-btn').disabled=true;
+  try{const j=await sb('/auth/v1/token?grant_type=password',{method:'POST',body:{email,password:pass},auth:false}); storeSession(j); $('s-pass').value=''; syncMsg(''); toast('Conectado.'); await syncNow(false)}
+  catch(err){
+    sync.session=null;saveSync();renderSyncUI();
+    let msg=''; try{const j=JSON.parse(err.message);msg=j.error_description||j.msg||j.message||j.error||''}catch{msg=String(err.message||'')}
+    let dica='confira e-mail, senha e chave';
+    if(err instanceof TypeError) dica='não consegui falar com o Supabase: confira a URL (só https://xxxx.supabase.co, sem /rest/v1) e a internet';
+    else if(/invalid login/i.test(msg)) dica='e-mail ou senha não conferem com o login do Supabase deste projeto';
+    else if(/api key|apikey|invalid.*key|jwt/i.test(msg)) dica='a chave pública está errada (use a anon/publishable, inteira, sem espaços)';
+    else if(/not confirmed/i.test(msg)) dica='e-mail ainda não confirmado no Supabase';
+    const full='Não entrou: '+dica+(msg?' ['+msg.slice(0,90)+']':''); syncMsg(full,true); toast(full,'err');
+  }finally{$('sync-btn').disabled=false}
 });
+function syncMsg(t,err){const m=$('sync-msg');m.textContent=t;m.style.color=err?'var(--red)':'var(--muted)'}
 function syncOut(){sync=null;saveSync();renderSyncUI();renderWarn();toast('Desconectado. Os dados continuam neste aparelho.')}
 
 /* ── PDF (impressão do navegador, funciona offline) ── */
