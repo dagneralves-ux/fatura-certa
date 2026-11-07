@@ -1,11 +1,21 @@
-FATURA CERTA v18 | CABECALHO MOBILE FIXO NO CANTO
+FATURA CERTA v20 | SINCRONIZACAO CLOUD-FIRST
 
-Ajuste apenas para celular:
-- cabecalho preso no topo da tela durante a rolagem;
-- logo e nome ancorados no canto superior esquerdo;
-- botoes de sincronizacao, tema e configuracoes alinhados no canto superior direito;
-- altura, margens e espaco do conteudo ajustados para o cabecalho fixo nao cobrir os cards;
-- barra inferior e botao de nova compra mantidos.
+Correcao:
+- quando o dispositivo esta sem compras/dados locais, baixa a copia existente do Supabase;
+- usa dados.updatedAt e a coluna atualizado_em para comparar versoes;
+- filtra o registro remoto pelo user_id autenticado;
+- nao envia uma base local vazia quando a consulta nao encontra registro remoto;
+- se nao houver registro na nuvem e o dispositivo tiver dados locais, cria/atualiza o registro;
+- se ambos tiverem dados, compara os carimbos de atualizacao e aplica a versao mais recente;
+- cria snapshot local antes de substituir dados locais existentes por dados da nuvem;
+- verifica atualizacoes da nuvem a cada 30 segundos enquanto o app estiver aberto e visivel.
 
-Desktop e demais funcoes preservados.
-Dados locais mantidos na chave fc_v2.
+IMPORTANTE:
+- configurar a conexao Supabase em cada dispositivo com o mesmo projeto e o mesmo usuario;
+- no primeiro acesso do celular, entrar na sincronizacao para baixar a copia da nuvem;
+- se a nuvem nao retornar registro, o app avisa e nao envia dados vazios.
+
+Preservado:
+- chave local fc_v2;
+- estrutura de compras, parcelas, pagamentos e cartoes;
+- telas, layout, temas, backups e importacao/exportacao.

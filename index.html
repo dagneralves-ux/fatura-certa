@@ -2765,6 +2765,91 @@ aside.top.sidebar #sync-chip>.ic,
   }
 }
 
+
+/* ===== v19 | correção fina de textos escuros no desktop ===== */
+@media(min-width:761px){
+  /* Green hero card on desktop dark theme: force white typography */
+  :root[data-theme="dark"] .metric-primary,
+  :root[data-theme="dark"] .metric-primary .metric-value,
+  :root[data-theme="dark"] .metric-primary .metric-label-row,
+  :root[data-theme="dark"] .metric-primary .metric-footnote{
+    color:#F8F8F8!important;
+  }
+  :root[data-theme="dark"] .metric-primary .metric-eyebrow,
+  :root[data-theme="dark"] .metric-primary .metric-meta{
+    color:rgba(248,248,248,.82)!important;
+  }
+  :root[data-theme="dark"] .metric-primary .metric-period{
+    color:#F8F8F8!important;
+    background:rgba(15,15,15,.14)!important;
+  }
+  :root[data-theme="dark"] .metric-primary .checkline{
+    color:#F8F8F8!important;
+    background:rgba(15,15,15,.10)!important;
+    border-color:rgba(248,248,248,.18)!important;
+  }
+  :root[data-theme="dark"] .metric-primary .checkline .cbox{
+    border-color:rgba(248,248,248,.78)!important;
+  }
+  :root[data-theme="dark"] .metric-primary .checkline .ic{
+    color:#F8F8F8!important;
+    stroke:#F8F8F8!important;
+  }
+
+  /* Cards intro / descriptive banners on desktop dark theme */
+  :root[data-theme="dark"] .cards-intro,
+  :root[data-theme="dark"] .cards-intro h1,
+  :root[data-theme="dark"] .cards-intro h2,
+  :root[data-theme="dark"] .cards-intro h3,
+  :root[data-theme="dark"] .cards-intro h4,
+  :root[data-theme="dark"] .cards-intro strong{
+    color:#F8F8F8!important;
+  }
+  :root[data-theme="dark"] .cards-intro p,
+  :root[data-theme="dark"] .cards-intro small,
+  :root[data-theme="dark"] .cards-intro .hint{
+    color:rgba(248,248,248,.78)!important;
+  }
+
+  /* Monthly overview and summary area that was rendering dark text */
+  :root[data-theme="dark"] .month-overview,
+  :root[data-theme="dark"] .month-overview h1,
+  :root[data-theme="dark"] .month-overview h2,
+  :root[data-theme="dark"] .month-overview h3,
+  :root[data-theme="dark"] .month-overview h4,
+  :root[data-theme="dark"] .month-overview strong,
+  :root[data-theme="dark"] .month-head,
+  :root[data-theme="dark"] .month-head *{
+    color:#F8F8F8!important;
+  }
+  :root[data-theme="dark"] .month-overview p,
+  :root[data-theme="dark"] .month-overview small,
+  :root[data-theme="dark"] .month-overview .hint,
+  :root[data-theme="dark"] .month-overview .muted{
+    color:rgba(248,248,248,.78)!important;
+  }
+  :root[data-theme="dark"] .month-overview .btn,
+  :root[data-theme="dark"] .month-overview .month-nav button{
+    color:#F8F8F8!important;
+  }
+
+  /* Small monthly summary cards */
+  :root[data-theme="dark"] .month-total-card,
+  :root[data-theme="dark"] .month-total-card strong,
+  :root[data-theme="dark"] .month-total-card .v,
+  :root[data-theme="dark"] .month-total-card h3{
+    color:#F8F8F8!important;
+  }
+  :root[data-theme="dark"] .month-total-card p,
+  :root[data-theme="dark"] .month-total-card small,
+  :root[data-theme="dark"] .month-total-card .t{
+    color:rgba(248,248,248,.78)!important;
+  }
+  :root[data-theme="dark"] .mkpi strong{color:#F8F8F8!important}
+  :root[data-theme="dark"] .mkpi small,
+  :root[data-theme="dark"] .mkpi .t{color:rgba(248,248,248,.78)!important}
+}
+
 </style>
 </head>
 <body>
@@ -3670,22 +3755,70 @@ async function ensureToken(){
 }
 function scheduleSync(){if(!sync?.session) return; clearTimeout(syncTimer); syncTimer=setTimeout(()=>syncNow(true),1500)}
 async function syncNow(quiet){
-  if(!sync?.session||syncBusy) return; syncBusy=true; setSync('', 'Sincronizando…');
+  if(!sync?.session||syncBusy) return;
+  syncBusy=true; setSync('', 'Sincronizando…');
   try{
     if(!navigator.onLine) throw Object.assign(new Error('offline'),{offline:true});
-    const rows=await sb('/rest/v1/fatura_dados?select=dados,atualizado_em&limit=1'); const remote=rows&&rows[0]?.dados;
-    const rts=Number(remote?.updatedAt)||0;
-    if(remote&&rts>S.updatedAt){
-      saveSnap('Antes de baixar da nuvem'); S=normalize(remote); S.updatedAt=rts; touch(); persist(); renderAll(); if(!quiet) toast('Dados atualizados da nuvem.');
-    }else if(!remote||S.updatedAt>rts){
-      await sb('/rest/v1/fatura_dados?on_conflict=user_id',{method:'POST',headers:{Prefer:'resolution=merge-duplicates,return=minimal'},body:{user_id:sync.session.user_id,dados:S,atualizado_em:new Date().toISOString()}});
+
+    /* Busca somente o registro do usuário autenticado. */
+    const uid=encodeURIComponent(sync.session.user_id||'');
+    const rows=await sb('/rest/v1/fatura_dados?select=dados,atualizado_em&user_id=eq.'+uid+'&limit=1');
+    const row=Array.isArray(rows)&&rows.length?rows[0]:null;
+    const remote=row?.dados||null;
+
+    const localHasData=!!(
+      (S.purchases&&S.purchases.length)||
+      Object.keys(S.paid||{}).length||
+      Object.keys(S.parcial||{}).length||
+      Object.keys(S.ajuste||{}).length||
+      Object.keys(S.cartoes||{}).length
+    );
+    const localTs=Number(S.updatedAt)||0;
+    const remoteDataTs=Number(remote?.updatedAt)||0;
+    const remoteColumnTs=Date.parse(row?.atualizado_em||'')||0;
+    const remoteTs=Math.max(remoteDataTs,remoteColumnTs);
+
+    if(remote){
+      /* Dispositivo sem dados locais sempre baixa a cópia da nuvem. */
+      if(!localHasData || remoteTs>localTs){
+        if(localHasData) saveSnap('Antes de baixar da nuvem');
+        S=normalize(remote);
+        S.updatedAt=remoteTs||Date.now();
+        touch(); persist(); renderAll();
+        if(!quiet) toast('Dados baixados da nuvem com sucesso.');
+      }else if(localTs>remoteTs){
+        await sb('/rest/v1/fatura_dados?on_conflict=user_id',{
+          method:'POST',
+          headers:{Prefer:'resolution=merge-duplicates,return=minimal'},
+          body:{user_id:sync.session.user_id,dados:S,atualizado_em:new Date().toISOString()}
+        });
+      }else if(!remoteTs&&!localTs&&localHasData){
+        setSync('err','Revisar dados da nuvem');
+        if(!quiet) toast('A nuvem tem dados sem data de atualização. Nenhuma cópia foi sobrescrita.','err');
+        return;
+      }
+    }else if(localHasData){
+      /* Só cria o primeiro registro remoto quando há dados locais de verdade. */
+      await sb('/rest/v1/fatura_dados?on_conflict=user_id',{
+        method:'POST',
+        headers:{Prefer:'resolution=merge-duplicates,return=minimal'},
+        body:{user_id:sync.session.user_id,dados:S,atualizado_em:new Date().toISOString()}
+      });
+    }else{
+      /* Celular vazio + consulta sem registro: nunca envia uma base vazia. */
+      sync.last=Date.now(); saveSync(); setSync('err','Nuvem sem dados');
+      if(!quiet) toast('Não encontrei dados na nuvem para esta conta. Nada foi enviado.','err');
+      return;
     }
+
     sync.last=Date.now(); saveSync(); setSync('ok','Sincronizado');
   }catch(e){
     if(e.status===401||e.status===400&&/refresh|token|JWT/i.test(e.message)) setSync('err','Entrar de novo');
     else if(e.offline||e instanceof TypeError) setSync('', 'Offline · salvo aqui');
     else {setSync('err','Erro de sync');console.warn(e); if(!quiet) toast('Falha ao sincronizar: '+String(e.message).slice(0,120),'err')}
-  }finally{syncBusy=false;renderSyncUI();renderWarn()}
+  }finally{
+    syncBusy=false; renderSyncUI(); renderWarn();
+  }
 }
 function renderSyncUI(){
   const on=!!sync?.session; $('sync-off').hidden=on; $('sync-on').hidden=!on;
@@ -3773,6 +3906,7 @@ function themeIcon(){const dark=(document.documentElement.dataset.theme||(matchM
 document.addEventListener('keydown',e=>{if((e.ctrlKey||e.metaKey)&&e.key==='z'&&!/INPUT|SELECT|TEXTAREA/.test(document.activeElement.tagName)&&undoSnap){e.preventDefault();undo()}});
 document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible'){renderAll();syncNow(true)}});
 addEventListener('online',()=>syncNow(true));
+setInterval(()=>{if(sync?.session&&document.visibilityState==='visible')syncNow(true)},30000);
 
 /* ── Boot ── */
 loadState(); touch(); autoSnap(); themeIcon(); renderAll(); renderSyncUI();

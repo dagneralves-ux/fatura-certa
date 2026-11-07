@@ -1,6 +1,6 @@
 /* Fatura Certa — service worker: abre rápido e funciona offline.
    Rede primeiro (pega atualizações), cache como reserva. Não toca no Supabase. */
-const CACHE = 'fatura-certa-ui-redesign-18';
+const CACHE = 'fatura-certa-ui-redesign-20';
 const SHELL = ['./', './index.html', './manifest.json', './icon-192.png', './icon-512.png', './icon-maskable-512.png', './apple-touch-icon.png', './favicon.png', './logo-fatura-certa.png'];
 
 self.addEventListener('install', e => {
