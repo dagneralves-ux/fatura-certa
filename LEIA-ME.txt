@@ -12,3 +12,15 @@ O manifest.json aponta para os arquivos atualizados.
 O service worker recebeu nova versao de cache e inclui o icone maskable no shell offline.
 
 Dados e funcoes preservados. Chave financeira local: fc_v2.
+
+
+FATURA CERTA v17 | AJUSTES SOMENTE MOBILE
+
+Correções:
+- cabeçalho mobile reorganizado;
+- botões superiores alinhados em linha, dentro da barra;
+- logo e nome do app melhor alinhados e levemente maiores;
+- no resumo mobile, o card "Total em aberto" ocupa largura completa;
+- os dois cards restantes ficam abaixo, lado a lado.
+
+Todo o resto foi mantido.
