@@ -1,26 +1,11 @@
-FATURA CERTA v16 | LOGO OFICIAL E ICONE DE INSTALACAO
+FATURA CERTA v18 | CABECALHO MOBILE FIXO NO CANTO
 
-A imagem F verde enviada pelo usuario foi aplicada como:
-- logo do cabecalho do aplicativo;
-- favicon do navegador;
-- icone PWA 192x192;
-- icone PWA 512x512;
-- icone PWA maskable 512x512;
-- Apple Touch Icon 180x180.
+Ajuste apenas para celular:
+- cabecalho preso no topo da tela durante a rolagem;
+- logo e nome ancorados no canto superior esquerdo;
+- botoes de sincronizacao, tema e configuracoes alinhados no canto superior direito;
+- altura, margens e espaco do conteudo ajustados para o cabecalho fixo nao cobrir os cards;
+- barra inferior e botao de nova compra mantidos.
 
-O manifest.json aponta para os arquivos atualizados.
-O service worker recebeu nova versao de cache e inclui o icone maskable no shell offline.
-
-Dados e funcoes preservados. Chave financeira local: fc_v2.
-
-
-FATURA CERTA v17 | AJUSTES SOMENTE MOBILE
-
-Correções:
-- cabeçalho mobile reorganizado;
-- botões superiores alinhados em linha, dentro da barra;
-- logo e nome do app melhor alinhados e levemente maiores;
-- no resumo mobile, o card "Total em aberto" ocupa largura completa;
-- os dois cards restantes ficam abaixo, lado a lado.
-
-Todo o resto foi mantido.
+Desktop e demais funcoes preservados.
+Dados locais mantidos na chave fc_v2.
