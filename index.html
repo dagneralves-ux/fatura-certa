@@ -720,17 +720,12 @@ small.hint{font-size:10px;color:var(--muted)}
   overflow:hidden;
   transition:width .22s ease, box-shadow .22s ease, border-color .22s ease;
 }
-.sidebar:hover,.sidebar:focus-within{width:var(--sidebar-expanded)!important;box-shadow:18px 0 44px rgba(0,0,0,.14)}
+
 .sidebar-inner{padding:20px 10px 18px!important}
 .sidebar-brand{padding:2px 4px 22px!important}
 .sidebar-brand .brand{justify-content:center;gap:0!important}
 .sidebar-brand .brand img{width:34px!important;height:34px!important;border-radius:10px!important;object-fit:contain!important}
-.sidebar-brand .brand span,
-.brand-caption,
-.nav-caption,
-#sync-chip .sync-copy,
-#sync-chip .sync-arrow,
-.sidebar-tools .iconbtn .lbl{opacity:0;visibility:hidden;transform:translateX(-8px);pointer-events:none}
+.sidebar-brand .brand span,.brand-caption,.nav-caption,#sync-chip .sync-copy,#sync-chip .sync-arrow,.sidebar-tools .iconbtn .lbl{opacity:0;visibility:hidden;transform:translateX(-8px);pointer-events:none}
 nav.tabs.side-tabs button span{opacity:0;visibility:hidden;transform:translateX(-8px);pointer-events:none;white-space:nowrap}
 nav.tabs.side-tabs button{justify-content:center!important;padding:0 12px!important}
 nav.tabs.side-tabs button .ic{width:18px;height:18px;flex:none}
@@ -738,47 +733,27 @@ nav.tabs.side-tabs button .ic{width:18px;height:18px;flex:none}
 #sync-chip{padding:10px 0!important;justify-content:center!important}
 #sync-chip>.ic{margin:0}
 main.wrap.app-main{margin-left:var(--sidebar-collapsed)!important;transition:margin-left .22s ease}
-.sidebar:hover ~ main.wrap.app-main,
-.sidebar:focus-within ~ main.wrap.app-main{margin-left:var(--sidebar-expanded)!important}
 
-.sidebar:hover .sidebar-brand .brand,
-.sidebar:focus-within .sidebar-brand .brand{justify-content:flex-start;gap:11px!important}
-.sidebar:hover .sidebar-brand .brand img,
-.sidebar:focus-within .sidebar-brand .brand img{width:42px!important;height:42px!important;border-radius:13px!important}
-.sidebar:hover .sidebar-brand .brand span,
-.sidebar:hover .brand-caption,
-.sidebar:hover .nav-caption,
-.sidebar:hover #sync-chip .sync-copy,
-.sidebar:hover #sync-chip .sync-arrow,
-.sidebar:hover nav.tabs.side-tabs button span,
-.sidebar:focus-within .sidebar-brand .brand span,
-.sidebar:focus-within .brand-caption,
-.sidebar:focus-within .nav-caption,
-.sidebar:focus-within #sync-chip .sync-copy,
-.sidebar:focus-within #sync-chip .sync-arrow,
-.sidebar:focus-within nav.tabs.side-tabs button span{
-  opacity:1;visibility:visible;transform:none;pointer-events:auto;transition:opacity .16s ease .08s, transform .16s ease .08s
-}
-.sidebar:hover nav.tabs.side-tabs button,
-.sidebar:focus-within nav.tabs.side-tabs button{justify-content:flex-start!important;padding:0 14px!important}
-.sidebar:hover #sync-chip,
-.sidebar:focus-within #sync-chip{padding:10px 12px!important;justify-content:flex-start!important}
-.sidebar:hover .sidebar-tools,
-.sidebar:focus-within .sidebar-tools{flex-direction:row;align-items:stretch}
+
+
+
+
+
+
+
 
 @media(max-width:980px){
   .sidebar{width:var(--sidebar-collapsed)!important}
-  .sidebar:hover,.sidebar:focus-within{width:var(--sidebar-expanded)!important}
+  
   main.wrap.app-main{margin-left:var(--sidebar-collapsed)!important}
-  .sidebar:hover ~ main.wrap.app-main,
-  .sidebar:focus-within ~ main.wrap.app-main{margin-left:var(--sidebar-expanded)!important}
+  
 }
 @media(max-width:760px){
-  .sidebar, .sidebar:hover, .sidebar:focus-within{width:100%!important}
+  .sidebar{width:100%!important}
   .sidebar-brand .brand span,.brand-caption,.nav-caption,#sync-chip .sync-copy,#sync-chip .sync-arrow,nav.tabs.side-tabs button span{
     opacity:1;visibility:visible;transform:none;pointer-events:auto
   }
-  main.wrap.app-main,.sidebar:hover ~ main.wrap.app-main,.sidebar:focus-within ~ main.wrap.app-main{margin-left:0!important}
+  main.wrap.app-main{margin-left:0!important}
 }
 
 /* tiny polish for cards toggle */
@@ -863,10 +838,7 @@ main.wrap.app-main{margin-left:var(--sidebar-collapsed)!important;transition:mar
     box-shadow:7px 0 28px rgba(2,18,24,.035);
     transition:width .24s cubic-bezier(.2,.75,.25,1),box-shadow .24s ease,background .2s ease
   }
-  .sidebar:hover,.sidebar:focus-within{
-    width:252px!important;
-    box-shadow:18px 0 48px rgba(2,18,24,.16)
-  }
+  
   .sidebar-inner{padding:19px 10px 18px!important}
   .sidebar-brand{padding:2px 0 27px!important}
   .sidebar-brand .brand img{
@@ -897,37 +869,22 @@ main.wrap.app-main{margin-left:var(--sidebar-collapsed)!important;transition:mar
     color:#fff;background:linear-gradient(145deg,#22c99a,#078b69);
     box-shadow:0 5px 13px rgba(9,160,119,.22)
   }
-  .sidebar:hover nav.tabs.side-tabs button,
-  .sidebar:focus-within nav.tabs.side-tabs button{
-    justify-content:flex-start!important;padding:4px 9px!important
-  }
-  .sidebar:hover nav.tabs.side-tabs button .ic,
-  .sidebar:focus-within nav.tabs.side-tabs button .ic{
-    width:38px!important;height:38px!important;padding:10px
-  }
+  
+  
   nav.tabs.side-tabs button:hover:not([aria-selected="true"]){
     background:var(--surface2);border-color:var(--line);transform:translateX(2px)
   }
   nav.tabs.side-tabs button:hover .ic{
     background:var(--green-soft);color:var(--green);transform:scale(1.04)
   }
-  .sidebar:hover nav.tabs.side-tabs button span,
-  .sidebar:focus-within nav.tabs.side-tabs button span{
-    font-size:12px;font-weight:750;letter-spacing:-.01em
-  }
-  .sidebar:hover .sidebar-brand .brand img,
-  .sidebar:focus-within .sidebar-brand .brand img{
-    width:42px!important;height:42px!important
-  }
-  .sidebar:hover .sidebar-brand .brand,
-  .sidebar:focus-within .sidebar-brand .brand{gap:11px!important}
-  .sidebar:hover .sidebar-tools .iconbtn,
-  .sidebar:focus-within .sidebar-tools .iconbtn{width:42px;height:42px}
+  
+  
+  
+  
   .sidebar-tools .iconbtn{transition:transform .18s ease,background .18s ease,color .18s ease}
   .sidebar-tools .iconbtn:hover{transform:translateY(-2px)}
   main.wrap.app-main{margin-left:76px!important;transition:margin-left .24s cubic-bezier(.2,.75,.25,1)}
-  .sidebar:hover ~ main.wrap.app-main,
-  .sidebar:focus-within ~ main.wrap.app-main{margin-left:252px!important}
+  
 }
 
 /* ===== Cartões: mockup mais próximo de um cartão bancário físico ===== */
@@ -1061,14 +1018,7 @@ main.wrap.app-main{margin-left:var(--sidebar-collapsed)!important;transition:mar
   nav.tabs.side-tabs button[aria-selected="true"] .ic{
     box-shadow:0 5px 14px rgba(9,160,119,.18)!important;
   }
-  .sidebar:hover nav.tabs.side-tabs button,
-  .sidebar:focus-within nav.tabs.side-tabs button{
-    width:100%!important;
-    max-width:none!important;
-    min-width:0!important;
-    justify-content:flex-start!important;
-    padding:4px 9px!important;
-  }
+  
 
   #sync-chip{
     width:56px!important;
@@ -1080,15 +1030,7 @@ main.wrap.app-main{margin-left:var(--sidebar-collapsed)!important;transition:mar
     justify-content:center!important;
     border-radius:18px!important;
   }
-  .sidebar:hover #sync-chip,
-  .sidebar:focus-within #sync-chip{
-    width:100%!important;
-    height:auto!important;
-    min-height:58px!important;
-    margin:0 0 10px!important;
-    padding:10px 12px!important;
-    justify-content:flex-start!important;
-  }
+  
 
   .sidebar-tools{
     width:100%!important;
@@ -1105,20 +1047,12 @@ main.wrap.app-main{margin-left:var(--sidebar-collapsed)!important;transition:mar
     border-radius:15px!important;
     margin:0 auto!important;
   }
-  .sidebar:hover .sidebar-tools,
-  .sidebar:focus-within .sidebar-tools{
-    flex-direction:row!important;
-    align-items:stretch!important;
-    justify-content:flex-start!important;
-  }
+  
 
   main.wrap.app-main{
     margin-left:88px!important;
   }
-  .sidebar:hover ~ main.wrap.app-main,
-  .sidebar:focus-within ~ main.wrap.app-main{
-    margin-left:252px!important;
-  }
+  
 }
 
 
@@ -1135,11 +1069,7 @@ main.wrap.app-main{margin-left:var(--sidebar-collapsed)!important;transition:mar
     transition:width .22s cubic-bezier(.2,.72,.25,1),box-shadow .22s ease!important;
     will-change:width;
   }
-  aside.top.sidebar:hover,
-  aside.top.sidebar:focus-within{
-    width:var(--sidebar-open)!important;
-    box-shadow:18px 0 48px rgba(3,18,24,.17)!important;
-  }
+  
   .sidebar-inner{
     width:100%!important;height:100%!important;
     min-width:0!important;max-width:none!important;
@@ -1160,10 +1090,7 @@ main.wrap.app-main{margin-left:var(--sidebar-collapsed)!important;transition:mar
     object-fit:contain!important;border-radius:11px!important;
     box-shadow:0 4px 14px rgba(10,150,110,.12)!important;
   }
-  .sidebar-brand .brand span,
-  .brand-caption,.nav-caption,
-  #sync-chip .sync-copy,#sync-chip .sync-arrow,
-  nav.tabs.side-tabs button span{
+  .sidebar-brand .brand span,.brand-caption,.nav-caption,#sync-chip .sync-copy,#sync-chip .sync-arrow,nav.tabs.side-tabs button span{
     opacity:0!important;visibility:hidden!important;pointer-events:none!important;
     transform:translateX(-7px)!important;
     transition:opacity .14s ease,transform .14s ease,visibility 0s linear .14s!important;
@@ -1213,48 +1140,14 @@ main.wrap.app-main{margin-left:var(--sidebar-collapsed)!important;transition:mar
     background:var(--green-soft)!important;color:var(--green)!important;
     transform:scale(1.035)!important;
   }
-  aside.top.sidebar:hover .sidebar-inner,
-  aside.top.sidebar:focus-within .sidebar-inner{padding:18px 12px 17px!important}
-  aside.top.sidebar:hover .sidebar-brand,
-  aside.top.sidebar:focus-within .sidebar-brand{
-    align-items:stretch!important;padding:2px 5px 24px!important;
-  }
-  aside.top.sidebar:hover .sidebar-brand .brand,
-  aside.top.sidebar:focus-within .sidebar-brand .brand{
-    justify-content:flex-start!important;gap:11px!important;
-  }
-  aside.top.sidebar:hover .sidebar-brand .brand img,
-  aside.top.sidebar:focus-within .sidebar-brand .brand img{
-    width:40px!important;height:40px!important;flex-basis:40px!important;
-  }
-  aside.top.sidebar:hover .sidebar-brand .brand span,
-  aside.top.sidebar:hover .brand-caption,
-  aside.top.sidebar:hover .nav-caption,
-  aside.top.sidebar:hover #sync-chip .sync-copy,
-  aside.top.sidebar:hover #sync-chip .sync-arrow,
-  aside.top.sidebar:hover nav.tabs.side-tabs button span,
-  aside.top.sidebar:focus-within .sidebar-brand .brand span,
-  aside.top.sidebar:focus-within .brand-caption,
-  aside.top.sidebar:focus-within .nav-caption,
-  aside.top.sidebar:focus-within #sync-chip .sync-copy,
-  aside.top.sidebar:focus-within #sync-chip .sync-arrow,
-  aside.top.sidebar:focus-within nav.tabs.side-tabs button span{
-    opacity:1!important;visibility:visible!important;pointer-events:auto!important;
-    transform:none!important;
-    transition:opacity .16s ease .06s,transform .16s ease .06s,visibility 0s linear 0s!important;
-  }
-  aside.top.sidebar:hover nav.tabs.side-tabs,
-  aside.top.sidebar:focus-within nav.tabs.side-tabs{align-items:stretch!important}
-  aside.top.sidebar:hover nav.tabs.side-tabs button,
-  aside.top.sidebar:focus-within nav.tabs.side-tabs button{
-    flex-basis:48px!important;width:100%!important;min-width:0!important;
-    max-width:none!important;height:48px!important;min-height:48px!important;max-height:48px!important;
-    padding:4px 8px!important;justify-content:flex-start!important;
-  }
-  aside.top.sidebar:hover nav.tabs.side-tabs button .ic,
-  aside.top.sidebar:focus-within nav.tabs.side-tabs button .ic{
-    flex-basis:36px!important;width:36px!important;height:36px!important;padding:9px!important;
-  }
+  
+  
+  
+  
+  
+  
+  
+  
   .sidebar-spacer{flex:1 1 auto!important;min-height:12px!important}
   .sidebar-foot{width:100%!important;display:flex!important;flex-direction:column!important;gap:9px!important}
   #sync-chip{
@@ -1265,12 +1158,7 @@ main.wrap.app-main{margin-left:var(--sidebar-collapsed)!important;transition:mar
     border-radius:16px!important;overflow:hidden!important;
   }
   #sync-chip>.ic{width:20px!important;height:20px!important;flex:0 0 20px!important}
-  aside.top.sidebar:hover #sync-chip,
-  aside.top.sidebar:focus-within #sync-chip{
-    width:100%!important;min-width:0!important;max-width:none!important;
-    height:58px!important;min-height:58px!important;margin:0 0 2px!important;
-    padding:9px 11px!important;justify-content:flex-start!important;
-  }
+  
   .sidebar-tools{
     width:100%!important;display:flex!important;flex-direction:column!important;
     align-items:center!important;justify-content:flex-start!important;gap:8px!important;
@@ -1281,22 +1169,16 @@ main.wrap.app-main{margin-left:var(--sidebar-collapsed)!important;transition:mar
     transition:transform .16s ease,background .16s ease,color .16s ease!important;
   }
   .sidebar-tools .iconbtn:hover{transform:translateY(-2px)!important}
-  aside.top.sidebar:hover .sidebar-tools,
-  aside.top.sidebar:focus-within .sidebar-tools{
-    flex-direction:row!important;align-items:center!important;justify-content:flex-start!important;
-  }
+  
   main.wrap.app-main{margin-left:var(--sidebar-rail)!important;transition:none!important}
-  aside.top.sidebar:hover ~ main.wrap.app-main,
-  aside.top.sidebar:focus-within ~ main.wrap.app-main{margin-left:var(--sidebar-rail)!important}
+  
 }
 @media(max-width:760px){
-  aside.top.sidebar,aside.top.sidebar:hover,aside.top.sidebar:focus-within{
+  aside.top.sidebar{
     width:100%!important;height:68px!important;overflow:visible!important;
   }
   .sidebar-inner{width:100%!important}
-  .sidebar-brand .brand span,.brand-caption,.nav-caption,
-  #sync-chip .sync-copy,#sync-chip .sync-arrow,
-  nav.tabs.side-tabs button span{
+  .sidebar-brand .brand span,.brand-caption,.nav-caption,#sync-chip .sync-copy,#sync-chip .sync-arrow,nav.tabs.side-tabs button span{
     opacity:1!important;visibility:visible!important;transform:none!important;pointer-events:auto!important;
   }
 }
@@ -1328,46 +1210,32 @@ main.wrap.app-main{margin-left:var(--sidebar-collapsed)!important;transition:mar
 /* ===== v7: logo visível e alinhamento uniforme do menu ===== */
 @media(min-width:761px){
   /* Recolhido: o texto sai do fluxo, deixando a marca realmente centralizada. */
-  aside.top.sidebar:not(:hover):not(:focus-within) .sidebar-brand .brand{
+  aside.top.sidebar .sidebar-brand .brand{
     width:100%!important;min-width:0!important;max-width:100%!important;
     justify-content:center!important;gap:0!important;overflow:visible!important;
   }
-  aside.top.sidebar:not(:hover):not(:focus-within) .sidebar-brand .brand img{
+  aside.top.sidebar .sidebar-brand .brand img{
     display:block!important;visibility:visible!important;opacity:1!important;
     position:relative!important;left:auto!important;right:auto!important;
     flex:0 0 42px!important;width:42px!important;min-width:42px!important;max-width:42px!important;
     height:42px!important;min-height:42px!important;max-height:42px!important;
     margin:0 auto!important;object-fit:contain!important;
   }
-  aside.top.sidebar:not(:hover):not(:focus-within) .sidebar-brand .brand span{
+  aside.top.sidebar .sidebar-brand .brand span{
     display:none!important;width:0!important;max-width:0!important;min-width:0!important;
     margin:0!important;padding:0!important;overflow:hidden!important;
   }
-  aside.top.sidebar:not(:hover):not(:focus-within) .brand-caption,
-  aside.top.sidebar:not(:hover):not(:focus-within) .nav-caption{
+  aside.top.sidebar .brand-caption,aside.top.sidebar .nav-caption{
     display:none!important;
   }
 
   /* Expandido: nome e legenda voltam ao fluxo normal, sem deslocar o ícone. */
-  aside.top.sidebar:hover .sidebar-brand .brand,
-  aside.top.sidebar:focus-within .sidebar-brand .brand{
-    width:100%!important;min-width:0!important;max-width:100%!important;
-    justify-content:flex-start!important;gap:11px!important;
-  }
-  aside.top.sidebar:hover .sidebar-brand .brand span,
-  aside.top.sidebar:focus-within .sidebar-brand .brand span{
-    display:inline!important;width:auto!important;max-width:none!important;min-width:0!important;
-    margin:0!important;padding:0!important;overflow:visible!important;
-  }
-  aside.top.sidebar:hover .brand-caption,
-  aside.top.sidebar:focus-within .brand-caption,
-  aside.top.sidebar:hover .nav-caption,
-  aside.top.sidebar:focus-within .nav-caption{
-    display:block!important;
-  }
+  
+  
+  
 
   /* Menu recolhido: rótulos fora do fluxo, ícones com caixa idêntica. */
-  aside.top.sidebar:not(:hover):not(:focus-within) nav.tabs.side-tabs button{
+  aside.top.sidebar nav.tabs.side-tabs button{
     box-sizing:border-box!important;display:flex!important;
     flex:0 0 54px!important;width:54px!important;min-width:54px!important;max-width:54px!important;
     height:54px!important;min-height:54px!important;max-height:54px!important;
@@ -1376,11 +1244,11 @@ main.wrap.app-main{margin-left:var(--sidebar-collapsed)!important;transition:mar
     gap:0!important;border:1px solid transparent!important;
     border-radius:16px!important;box-shadow:none!important;transform:none!important;
   }
-  aside.top.sidebar:not(:hover):not(:focus-within) nav.tabs.side-tabs button span{
+  aside.top.sidebar nav.tabs.side-tabs button span{
     display:none!important;width:0!important;max-width:0!important;min-width:0!important;
     margin:0!important;padding:0!important;overflow:hidden!important;
   }
-  aside.top.sidebar:not(:hover):not(:focus-within) nav.tabs.side-tabs button .ic{
+  aside.top.sidebar nav.tabs.side-tabs button .ic{
     display:block!important;flex:0 0 40px!important;
     width:40px!important;min-width:40px!important;max-width:40px!important;
     height:40px!important;min-height:40px!important;max-height:40px!important;
@@ -1388,8 +1256,7 @@ main.wrap.app-main{margin-left:var(--sidebar-collapsed)!important;transition:mar
   }
 
   /* O estado selecionado muda só a cor, nunca a geometria do botão. */
-  aside.top.sidebar nav.tabs.side-tabs button,
-  aside.top.sidebar nav.tabs.side-tabs button[aria-selected="true"]{
+  aside.top.sidebar nav.tabs.side-tabs button,aside.top.sidebar nav.tabs.side-tabs button[aria-selected="true"]{
     box-sizing:border-box!important;border-width:1px!important;
     transform:none!important;outline:none!important;
   }
@@ -1411,24 +1278,14 @@ main.wrap.app-main{margin-left:var(--sidebar-collapsed)!important;transition:mar
   }
 
   /* Expandido: mesma altura e alinhamento para todos os itens. */
-  aside.top.sidebar:hover nav.tabs.side-tabs button,
-  aside.top.sidebar:focus-within nav.tabs.side-tabs button{
-    flex:0 0 48px!important;width:100%!important;min-width:0!important;max-width:100%!important;
-    height:48px!important;min-height:48px!important;max-height:48px!important;
-    margin:0!important;padding:4px 8px!important;
-    justify-content:flex-start!important;gap:11px!important;
-  }
-  aside.top.sidebar:hover nav.tabs.side-tabs button span,
-  aside.top.sidebar:focus-within nav.tabs.side-tabs button span{
-    display:block!important;width:auto!important;min-width:0!important;max-width:none!important;
-  }
+  
+  
 }
 
 
 /* ===== v8: sincronização alinhada e menu recolhe após seleção ===== */
 @media(min-width:761px){
-  aside.top.sidebar:not(:hover):not(:focus-within) #sync-chip,
-  aside.top.sidebar.sidebar-after-action #sync-chip{
+  aside.top.sidebar #sync-chip,aside.top.sidebar.sidebar-after-action #sync-chip{
     box-sizing:border-box!important;
     display:flex!important;align-items:center!important;justify-content:center!important;
     width:44px!important;min-width:44px!important;max-width:44px!important;
@@ -1436,29 +1293,15 @@ main.wrap.app-main{margin-left:var(--sidebar-collapsed)!important;transition:mar
     padding:0!important;margin:0 auto 2px!important;gap:0!important;
     border-radius:14px!important;overflow:hidden!important;
   }
-  aside.top.sidebar:not(:hover):not(:focus-within) #sync-chip>.ic,
-  aside.top.sidebar.sidebar-after-action #sync-chip>.ic{
+  aside.top.sidebar #sync-chip>.ic,aside.top.sidebar.sidebar-after-action #sync-chip>.ic{
     display:block!important;flex:0 0 20px!important;width:20px!important;height:20px!important;
     margin:0!important;
   }
-  aside.top.sidebar:hover:not(.sidebar-after-action) #sync-chip,
-  aside.top.sidebar:focus-within:not(.sidebar-after-action) #sync-chip{
-    width:100%!important;min-width:0!important;max-width:none!important;
-    height:58px!important;min-height:58px!important;max-height:58px!important;
-    padding:9px 11px!important;margin:0 0 2px!important;gap:9px!important;
-    justify-content:flex-start!important;
-  }
-  aside.top.sidebar:hover:not(.sidebar-after-action) #sync-chip .sync-copy,
-  aside.top.sidebar:hover:not(.sidebar-after-action) #sync-chip .sync-arrow,
-  aside.top.sidebar:focus-within:not(.sidebar-after-action) #sync-chip .sync-copy,
-  aside.top.sidebar:focus-within:not(.sidebar-after-action) #sync-chip .sync-arrow{
-    opacity:1!important;visibility:visible!important;transform:none!important;pointer-events:auto!important;
-  }
+  
+  
 
   /* After selecting a tab or opening sync/settings, hold the rail closed until pointer leaves. */
-  aside.top.sidebar.sidebar-after-action,
-  aside.top.sidebar.sidebar-after-action:hover,
-  aside.top.sidebar.sidebar-after-action:focus-within{
+  aside.top.sidebar.sidebar-after-action,aside.top.sidebar.sidebar-after-action:hover,aside.top.sidebar.sidebar-after-action:focus-within{
     width:84px!important;min-width:84px!important;max-width:84px!important;
     box-shadow:5px 0 24px rgba(3,18,24,.045)!important;
   }
@@ -1476,12 +1319,7 @@ main.wrap.app-main{margin-left:var(--sidebar-collapsed)!important;transition:mar
     width:42px!important;min-width:42px!important;max-width:42px!important;
     height:42px!important;flex:0 0 42px!important;margin:0 auto!important;
   }
-  aside.top.sidebar.sidebar-after-action .sidebar-brand .brand span,
-  aside.top.sidebar.sidebar-after-action .brand-caption,
-  aside.top.sidebar.sidebar-after-action .nav-caption,
-  aside.top.sidebar.sidebar-after-action #sync-chip .sync-copy,
-  aside.top.sidebar.sidebar-after-action #sync-chip .sync-arrow,
-  aside.top.sidebar.sidebar-after-action nav.tabs.side-tabs button span{
+  aside.top.sidebar.sidebar-after-action .sidebar-brand .brand span,aside.top.sidebar.sidebar-after-action .brand-caption,aside.top.sidebar.sidebar-after-action .nav-caption,aside.top.sidebar.sidebar-after-action #sync-chip .sync-copy,aside.top.sidebar.sidebar-after-action #sync-chip .sync-arrow,aside.top.sidebar.sidebar-after-action nav.tabs.side-tabs button span{
     display:none!important;visibility:hidden!important;opacity:0!important;
     width:0!important;min-width:0!important;max-width:0!important;
     margin:0!important;padding:0!important;transform:translateX(-7px)!important;
@@ -1525,10 +1363,7 @@ main.wrap.app-main{margin-left:var(--sidebar-collapsed)!important;transition:mar
     align-items:center!important;justify-content:flex-end!important;
     gap:8px!important;
   }
-  aside.top.sidebar #sync-chip,
-  aside.top.sidebar:not(:hover) #sync-chip,
-  aside.top.sidebar:not(:focus-within) #sync-chip,
-  aside.top.sidebar.sidebar-after-action #sync-chip{
+  aside.top.sidebar #sync-chip,aside.top.sidebar:not(:hover) #sync-chip,aside.top.sidebar:not(:focus-within) #sync-chip,aside.top.sidebar.sidebar-after-action #sync-chip{
     box-sizing:border-box!important;
     display:grid!important;place-items:center!important;
     flex:0 0 44px!important;
@@ -1542,10 +1377,7 @@ main.wrap.app-main{margin-left:var(--sidebar-collapsed)!important;transition:mar
     box-shadow:none!important;
     overflow:hidden!important;
   }
-  aside.top.sidebar #sync-chip>.ic,
-  aside.top.sidebar:not(:hover) #sync-chip>.ic,
-  aside.top.sidebar:not(:focus-within) #sync-chip>.ic,
-  aside.top.sidebar.sidebar-after-action #sync-chip>.ic{
+  aside.top.sidebar #sync-chip>.ic,aside.top.sidebar:not(:hover) #sync-chip>.ic,aside.top.sidebar:not(:focus-within) #sync-chip>.ic,aside.top.sidebar.sidebar-after-action #sync-chip>.ic{
     display:block!important;
     width:20px!important;min-width:20px!important;max-width:20px!important;
     height:20px!important;min-height:20px!important;max-height:20px!important;
@@ -1554,8 +1386,7 @@ main.wrap.app-main{margin-left:var(--sidebar-collapsed)!important;transition:mar
     stroke-width:1.8!important;
     transform:scale(1.12)!important;
   }
-  aside.top.sidebar #sync-chip .sync-copy,
-  aside.top.sidebar #sync-chip .sync-arrow{
+  aside.top.sidebar #sync-chip .sync-copy,aside.top.sidebar #sync-chip .sync-arrow{
     display:none!important;visibility:hidden!important;opacity:0!important;
     width:0!important;height:0!important;margin:0!important;padding:0!important;
   }
@@ -1564,9 +1395,7 @@ main.wrap.app-main{margin-left:var(--sidebar-collapsed)!important;transition:mar
     align-items:center!important;justify-content:center!important;
     gap:8px!important;width:44px!important;margin:0!important;padding:0!important;
   }
-  aside.top.sidebar .sidebar-tools .iconbtn,
-  aside.top.sidebar .sidebar-tools #theme-btn,
-  aside.top.sidebar .sidebar-tools button[data-act="dados"]{
+  aside.top.sidebar .sidebar-tools .iconbtn,aside.top.sidebar .sidebar-tools #theme-btn,aside.top.sidebar .sidebar-tools button[data-act="dados"]{
     box-sizing:border-box!important;
     display:grid!important;place-items:center!important;
     flex:0 0 44px!important;
@@ -1583,49 +1412,24 @@ main.wrap.app-main{margin-left:var(--sidebar-collapsed)!important;transition:mar
     display:block!important;width:20px!important;height:20px!important;
     margin:0!important;padding:0!important;stroke-width:1.8!important;
   }
-  aside.top.sidebar #sync-chip:hover,
-  aside.top.sidebar .sidebar-tools .iconbtn:hover{
+  aside.top.sidebar #sync-chip:hover,aside.top.sidebar .sidebar-tools .iconbtn:hover{
     background:var(--green-soft)!important;
     border-color:color-mix(in srgb,var(--green) 30%,var(--line))!important;
     color:var(--green)!important;
   }
-  aside.top.sidebar #sync-chip:hover>.ic,
-  aside.top.sidebar .sidebar-tools .iconbtn:hover .ic{
+  aside.top.sidebar #sync-chip:hover>.ic,aside.top.sidebar .sidebar-tools .iconbtn:hover .ic{
     color:var(--green)!important;
   }
-  aside.top.sidebar #sync-chip:focus-visible,
-  aside.top.sidebar .sidebar-tools .iconbtn:focus-visible{
+  aside.top.sidebar #sync-chip:focus-visible,aside.top.sidebar .sidebar-tools .iconbtn:focus-visible{
     outline:2px solid var(--green)!important;outline-offset:2px!important;
   }
 
   /* Expandido: sincronização volta a mostrar texto, mas conserva o alinhamento. */
-  aside.top.sidebar:hover:not(.sidebar-after-action) .sidebar-foot,
-  aside.top.sidebar:focus-within:not(.sidebar-after-action) .sidebar-foot{
-    align-items:stretch!important;gap:8px!important;
-  }
-  aside.top.sidebar:hover:not(.sidebar-after-action) #sync-chip,
-  aside.top.sidebar:focus-within:not(.sidebar-after-action) #sync-chip{
-    display:flex!important;flex:0 0 auto!important;
-    width:100%!important;min-width:0!important;max-width:none!important;
-    height:54px!important;min-height:54px!important;max-height:54px!important;
-    margin:0!important;padding:9px 11px!important;gap:9px!important;
-    justify-content:flex-start!important;border-radius:14px!important;
-  }
-  aside.top.sidebar:hover:not(.sidebar-after-action) #sync-chip .sync-copy,
-  aside.top.sidebar:hover:not(.sidebar-after-action) #sync-chip .sync-arrow,
-  aside.top.sidebar:focus-within:not(.sidebar-after-action) #sync-chip .sync-copy,
-  aside.top.sidebar:focus-within:not(.sidebar-after-action) #sync-chip .sync-arrow{
-    display:flex!important;visibility:visible!important;opacity:1!important;
-    width:auto!important;height:auto!important;margin:0!important;padding:0!important;
-  }
-  aside.top.sidebar:hover:not(.sidebar-after-action) #sync-chip>.ic,
-  aside.top.sidebar:focus-within:not(.sidebar-after-action) #sync-chip>.ic{
-    transform:none!important;color:var(--green)!important;
-  }
-  aside.top.sidebar:hover:not(.sidebar-after-action) .sidebar-tools,
-  aside.top.sidebar:focus-within:not(.sidebar-after-action) .sidebar-tools{
-    width:auto!important;flex-direction:row!important;justify-content:flex-start!important;gap:8px!important;
-  }
+  
+  
+  
+  
+  
 }
 
 
@@ -1658,8 +1462,7 @@ main.wrap.app-main{margin-left:var(--sidebar-collapsed)!important;transition:mar
   filter:brightness(1.03);
   transform:translateY(-1px);
 }
-.tabs.bottom button[aria-selected="true"],
-nav.tabs.side-tabs button[aria-selected="true"]{
+.tabs.bottom button[aria-selected="true"],nav.tabs.side-tabs button[aria-selected="true"]{
   border-color:color-mix(in srgb,var(--green) 30%,var(--line))!important;
 }
 .metric-card,.cards-intro,.month-overview{
@@ -1763,15 +1566,11 @@ nav.tabs.side-tabs button[aria-selected="true"]{
   background:linear-gradient(135deg,#5DD62C 0%,#48b823 100%)!important;
   color:#0F0F0F!important;
 }
-:root[data-theme="light"] .metric-primary .metric-meta,
-:root[data-theme="light"] .metric-primary .metric-footnote{color:rgba(15,15,15,.66)!important}
+:root[data-theme="light"] .metric-primary .metric-meta,:root[data-theme="light"] .metric-primary .metric-footnote{color:rgba(15,15,15,.66)!important}
 :root[data-theme="dark"] .metric-primary{
   background:linear-gradient(135deg,#337418 0%,#5DD62C 100%)!important;
 }
-:root[data-theme="dark"] .cards-intro,
-:root[data-theme="dark"] .month-overview,
-:root[data-theme="dark"] .mkpi,
-:root[data-theme="dark"] .mgroup{
+:root[data-theme="dark"] .cards-intro,:root[data-theme="dark"] .month-overview,:root[data-theme="dark"] .mkpi,:root[data-theme="dark"] .mgroup{
   background:linear-gradient(180deg,#171717,#202020)!important;
 }
 
@@ -1826,17 +1625,14 @@ button:active,.btn:active,.iconbtn:active,.pd:active,.pbtn:active{
 .iconbtn:active{transform:translateY(0) scale(.96)}
 
 /* Panels and KPI cards gain depth only on interaction. */
-.metric-card,.panel,.tile,.mcard,.pcard,.filters-panel,.month-overview,
-.month-total-card,.mgroup,.mkpi,.cards-intro,.card-illus-wrap{
+.metric-card,.panel,.tile,.mcard,.pcard,.filters-panel,.month-overview,.month-total-card,.mgroup,.mkpi,.cards-intro,.card-illus-wrap{
   transition:
     border-color .2s var(--ease-premium),
     box-shadow .22s var(--ease-premium),
     background-color .2s var(--ease-premium),
     transform .22s var(--ease-premium)!important;
 }
-.metric-card:not(.metric-primary):hover,
-.panel:hover,.tile:hover,.filters-panel:hover,.month-overview:hover,
-.month-total-card:hover,.mkpi:hover,.mgroup:hover,.cards-intro:hover{
+.metric-card:not(.metric-primary):hover,.panel:hover,.tile:hover,.filters-panel:hover,.month-overview:hover,.month-total-card:hover,.mkpi:hover,.mgroup:hover,.cards-intro:hover{
   border-color:color-mix(in srgb,#5DD62C 23%,var(--line))!important;
   box-shadow:var(--shadow-card),0 0 0 1px rgba(93,214,44,.035)!important;
 }
@@ -1958,23 +1754,14 @@ section:not([hidden]){animation:fcSectionIn .24s ease-out both}
 *::-webkit-scrollbar-thumb:hover{background:color-mix(in srgb,var(--green) 48%,var(--line));background-clip:padding-box}
 
 /* Light theme keeps the same brand but uses softer elevations. */
-:root[data-theme="light"] .metric-card:not(.metric-primary),
-:root[data-theme="light"] .panel,
-:root[data-theme="light"] .pcard,
-:root[data-theme="light"] .mgroup,
-:root[data-theme="light"] .mkpi{
+:root[data-theme="light"] .metric-card:not(.metric-primary),:root[data-theme="light"] .panel,:root[data-theme="light"] .pcard,:root[data-theme="light"] .mgroup,:root[data-theme="light"] .mkpi{
   box-shadow:0 8px 24px rgba(15,15,15,.045)!important;
 }
-:root[data-theme="dark"] .metric-card:not(.metric-primary),
-:root[data-theme="dark"] .panel,
-:root[data-theme="dark"] .pcard,
-:root[data-theme="dark"] .mgroup,
-:root[data-theme="dark"] .mkpi{
+:root[data-theme="dark"] .metric-card:not(.metric-primary),:root[data-theme="dark"] .panel,:root[data-theme="dark"] .pcard,:root[data-theme="dark"] .mgroup,:root[data-theme="dark"] .mkpi{
   box-shadow:0 10px 28px rgba(0,0,0,.2)!important;
 }
 @media(hover:none){
-  .metric-card:hover,.panel:hover,.tile:hover,.mcard:hover,.pcard:hover,
-  .card-illus-wrap:hover,.card-illus-wrap:hover .card-shell{
+  .metric-card:hover,.panel:hover,.tile:hover,.mcard:hover,.pcard:hover,.card-illus-wrap:hover,.card-illus-wrap:hover .card-shell{
     transform:none!important;filter:none!important;
   }
 }
@@ -2002,11 +1789,7 @@ section:not([hidden]){animation:fcSectionIn .24s ease-out both}
 }
 
 /* Main accents */
-.panel-kicker,
-.metric-meta strong,
-.chart-legend .on,
-.pos,
-.ok{
+.panel-kicker,.metric-meta strong,.chart-legend .on,.pos,.ok{
   color:var(--green)!important;
 }
 .btn.primary,.btn.ok,.metric-primary{
@@ -2015,8 +1798,7 @@ section:not([hidden]){animation:fcSectionIn .24s ease-out both}
 :root[data-theme="dark"] .metric-primary{
   color:#0F0F0F!important;
 }
-:root[data-theme="dark"] .metric-primary .metric-meta,
-:root[data-theme="dark"] .metric-primary .metric-footnote{
+:root[data-theme="dark"] .metric-primary .metric-meta,:root[data-theme="dark"] .metric-primary .metric-footnote{
   color:rgba(15,15,15,.68)!important;
 }
 .bar>i,.mgroup-bar i,.prow-progress i,.card-limit i,.metric-card .bar>i{
@@ -2024,26 +1806,13 @@ section:not([hidden]){animation:fcSectionIn .24s ease-out both}
 }
 
 /* Panels and neutral surfaces keep the same dark premium pattern */
-:root[data-theme="dark"] .panel,
-:root[data-theme="dark"] .tile,
-:root[data-theme="dark"] .mcard,
-:root[data-theme="dark"] .pcard,
-:root[data-theme="dark"] .cards-intro,
-:root[data-theme="dark"] .month-overview,
-:root[data-theme="dark"] .month-total-card,
-:root[data-theme="dark"] .mkpi,
-:root[data-theme="dark"] .mgroup,
-:root[data-theme="dark"] .filters-panel,
-:root[data-theme="dark"] .metric-card:not(.metric-primary){
+:root[data-theme="dark"] .panel,:root[data-theme="dark"] .tile,:root[data-theme="dark"] .mcard,:root[data-theme="dark"] .pcard,:root[data-theme="dark"] .cards-intro,:root[data-theme="dark"] .month-overview,:root[data-theme="dark"] .month-total-card,:root[data-theme="dark"] .mkpi,:root[data-theme="dark"] .mgroup,:root[data-theme="dark"] .filters-panel,:root[data-theme="dark"] .metric-card:not(.metric-primary){
   background:linear-gradient(180deg,#161616 0%, #202020 100%)!important;
   border-color:#2d2d2d!important;
 }
 
 /* Selected and hover states */
-.seg button[aria-pressed="true"],
-.view-toggle button[aria-pressed="true"],
-nav.tabs.side-tabs button[aria-selected="true"],
-.tabs.bottom button[aria-selected="true"]{
+.seg button[aria-pressed="true"],.view-toggle button[aria-pressed="true"],nav.tabs.side-tabs button[aria-selected="true"],.tabs.bottom button[aria-selected="true"]{
   background:color-mix(in srgb,var(--green-soft) 70%, transparent)!important;
   border-color:color-mix(in srgb,var(--green) 32%, var(--line))!important;
   color:var(--green)!important;
@@ -2052,11 +1821,7 @@ nav.tabs.side-tabs button[aria-selected="true"] .ic{
   background:linear-gradient(145deg,#5DD62C,#49bb22)!important;
   color:#0F0F0F!important;
 }
-.pcard:not(.done):hover,
-.prow:not(.pago):hover,
-.mcard.now,
-.panel:hover,
-.metric-card:not(.metric-primary):hover{
+.pcard:not(.done):hover,.prow:not(.pago):hover,.mcard.now,.panel:hover,.metric-card:not(.metric-primary):hover{
   border-color:color-mix(in srgb,var(--green) 26%, var(--line))!important;
 }
 
@@ -2075,30 +1840,15 @@ nav.tabs.side-tabs button[aria-selected="true"] .ic{
 .card-illus .card-shell:after{
   background:radial-gradient(ellipse, rgba(93,214,44,.20), transparent 72%)!important;
 }
-.card-issuer span,
-.card-value-area span,
-.card-bottomline small{
+.card-issuer span,.card-value-area span,.card-bottomline small{
   color:rgba(248,248,248,.82)!important;
 }
-.card-bottomline strong,
-.card-value-area strong,
-.card-holder strong,
-.card-period strong{
+.card-bottomline strong,.card-value-area strong,.card-holder strong,.card-period strong{
   color:#F8F8F8!important;
 }
 
 /* Light theme still follows the same brand language, just cleaner */
-:root[data-theme="light"] .panel,
-:root[data-theme="light"] .tile,
-:root[data-theme="light"] .mcard,
-:root[data-theme="light"] .pcard,
-:root[data-theme="light"] .cards-intro,
-:root[data-theme="light"] .month-overview,
-:root[data-theme="light"] .month-total-card,
-:root[data-theme="light"] .mkpi,
-:root[data-theme="light"] .mgroup,
-:root[data-theme="light"] .filters-panel,
-:root[data-theme="light"] .metric-card:not(.metric-primary){
+:root[data-theme="light"] .panel,:root[data-theme="light"] .tile,:root[data-theme="light"] .mcard,:root[data-theme="light"] .pcard,:root[data-theme="light"] .cards-intro,:root[data-theme="light"] .month-overview,:root[data-theme="light"] .month-total-card,:root[data-theme="light"] .mkpi,:root[data-theme="light"] .mgroup,:root[data-theme="light"] .filters-panel,:root[data-theme="light"] .metric-card:not(.metric-primary){
   border-color:#dde4d7!important;
 }
 
@@ -2106,8 +1856,7 @@ nav.tabs.side-tabs button[aria-selected="true"] .ic{
 /* ===== v13 | aplicação integral da paleta Fatura Certa ===== */
 
 /* LIGHT THEME */
-:root:not([data-theme="dark"]),
-:root[data-theme="light"]{
+:root:not([data-theme="dark"]),:root[data-theme="light"]{
   --bg:#F8F8F8!important;
   --surface:#FFFFFF!important;
   --surface2:#F1F1F1!important;
@@ -2181,9 +1930,7 @@ aside.top.sidebar{
   background:var(--surface)!important;
   border-color:var(--line)!important;
 }
-.sidebar-tools .iconbtn,
-#sync-chip,
-.period-chip{
+.sidebar-tools .iconbtn,#sync-chip,.period-chip{
   background:var(--surface2)!important;
   border:1px solid var(--line)!important;
   color:var(--text)!important;
@@ -2198,8 +1945,7 @@ nav.tabs.side-tabs button[aria-selected="true"] .ic{
   background:linear-gradient(145deg,#5DD62C,#337418)!important;
   color:#0F0F0F!important;
 }
-nav.tabs.side-tabs button:hover:not([aria-selected="true"]),
-.sidebar-tools .iconbtn:hover,#sync-chip:hover{
+nav.tabs.side-tabs button:hover:not([aria-selected="true"]),.sidebar-tools .iconbtn:hover,#sync-chip:hover{
   background:color-mix(in srgb,var(--green) 9%,var(--surface2))!important;
   border-color:color-mix(in srgb,var(--green) 28%,var(--line))!important;
 }
@@ -2235,15 +1981,12 @@ input:focus,select:focus,textarea:focus{
 }
 
 /* Dashboard cards, panels, summaries and filters */
-.card,.panel,.filters-panel,.month-overview,.cards-intro,
-.metric-card:not(.metric-primary),.tile,.month-total-card,
-.mkpi,.mgroup,.mcard,.pcard,.prow,details.concl{
+.card,.panel,.filters-panel,.month-overview,.cards-intro,.metric-card:not(.metric-primary),.tile,.month-total-card,.mkpi,.mgroup,.mcard,.pcard,.prow,details.concl{
   background:var(--surface)!important;
   border-color:var(--line)!important;
   color:var(--text)!important;
 }
-.filters-panel,.cards-intro,.month-overview,.month-total-card,
-.mkpi,.mgroup,.panel,.metric-card:not(.metric-primary){
+.filters-panel,.cards-intro,.month-overview,.month-total-card,.mkpi,.mgroup,.panel,.metric-card:not(.metric-primary){
   box-shadow:var(--shadow)!important;
 }
 .metric-primary{
@@ -2251,9 +1994,7 @@ input:focus,select:focus,textarea:focus{
   color:#0F0F0F!important;
   border-color:rgba(93,214,44,.28)!important;
 }
-.metric-primary .metric-eyebrow,
-.metric-primary .metric-meta,
-.metric-primary .metric-footnote{color:rgba(15,15,15,.78)!important}
+.metric-primary .metric-eyebrow,.metric-primary .metric-meta,.metric-primary .metric-footnote{color:rgba(15,15,15,.78)!important}
 .metric-primary .checkline{
   background:rgba(15,15,15,.10)!important;
   border-color:rgba(15,15,15,.18)!important;
@@ -2275,8 +2016,7 @@ input:focus,select:focus,textarea:focus{
 .bar,.metric-card .bar,.prow-progress,.mgroup-bar,.card-limit{
   background:#363636!important;
 }
-.bar>i,.metric-card .bar>i,.prow-progress i,.mgroup-bar i,
-.card-limit i,.catrow .bar>i,.fc .b{
+.bar>i,.metric-card .bar>i,.prow-progress i,.mgroup-bar i,.card-limit i,.catrow .bar>i,.fc .b{
   background:linear-gradient(90deg,#337418 0%,#5DD62C 100%)!important;
 }
 
@@ -2406,14 +2146,7 @@ dialog .btn.primary{background:#5DD62C!important;color:#0F0F0F!important}
 .toast button{color:#5DD62C!important}
 
 /* Light theme: same green palette on clean off-white surfaces. */
-:root:not([data-theme="dark"]) .prow,
-:root:not([data-theme="dark"]) .pcard,
-:root:not([data-theme="dark"]) .mgroup,
-:root:not([data-theme="dark"]) .mkpi,
-:root:not([data-theme="dark"]) .filters-panel,
-:root:not([data-theme="dark"]) .cards-intro,
-:root:not([data-theme="dark"]) .month-overview,
-:root:not([data-theme="dark"]) dialog{
+:root:not([data-theme="dark"]) .prow,:root:not([data-theme="dark"]) .pcard,:root:not([data-theme="dark"]) .mgroup,:root:not([data-theme="dark"]) .mkpi,:root:not([data-theme="dark"]) .filters-panel,:root:not([data-theme="dark"]) .cards-intro,:root:not([data-theme="dark"]) .month-overview,:root:not([data-theme="dark"]) dialog{
   color:#0F0F0F!important;
 }
 
@@ -2437,37 +2170,21 @@ nav.tabs.side-tabs button[aria-selected="true"] .ic{
   background:color-mix(in srgb,#5DD62C 12%,var(--surface2))!important;
   box-shadow:inset 0 0 0 1px rgba(93,214,44,.16)!important;
 }
-.sidebar-tools .iconbtn .ic,
-#sync-chip>.ic,
-.period-chip .ic,
-.iconbtn .ic,
-.pbtn .ic,
-.pact .iconbtn .ic,
-button[data-act="dados"] .ic,
-button[data-act="theme"] .ic,
-button[data-act="sync"] .ic{
+.sidebar-tools .iconbtn .ic,#sync-chip>.ic,.period-chip .ic,.iconbtn .ic,.pbtn .ic,.pact .iconbtn .ic,button[data-act="dados"] .ic,button[data-act="theme"] .ic,button[data-act="sync"] .ic{
   color:#5DD62C!important;
   opacity:1!important;
 }
-.iconbtn:hover .ic,
-.pbtn:hover .ic,
-.sidebar-tools .iconbtn:hover .ic,
-#sync-chip:hover>.ic{
+.iconbtn:hover .ic,.pbtn:hover .ic,.sidebar-tools .iconbtn:hover .ic,#sync-chip:hover>.ic{
   color:#5DD62C!important;
 }
-.btn.primary .ic,
-.btn.ok .ic,
-.btn-new .ic{
+.btn.primary .ic,.btn.ok .ic,.btn-new .ic{
   color:#0F0F0F!important;
 }
 
 
 /* ===== v15: remove a regra antiga verde-petroleo do icone selecionado ===== */
 @media(min-width:761px){
-  aside.top.sidebar nav.tabs.side-tabs button .ic,
-  aside.top.sidebar nav.tabs.side-tabs button:hover .ic,
-  aside.top.sidebar nav.tabs.side-tabs button[aria-selected="true"] .ic,
-  aside.top.sidebar.sidebar-after-action nav.tabs.side-tabs button[aria-selected="true"] .ic{
+  aside.top.sidebar nav.tabs.side-tabs button .ic,aside.top.sidebar nav.tabs.side-tabs button:hover .ic,aside.top.sidebar nav.tabs.side-tabs button[aria-selected="true"] .ic,aside.top.sidebar.sidebar-after-action nav.tabs.side-tabs button[aria-selected="true"] .ic{
     color:#5DD62C!important;
     stroke:#5DD62C!important;
     fill:none!important;
@@ -2481,27 +2198,19 @@ button[data-act="sync"] .ic{
     color:#5DD62C!important;
     box-shadow:none!important;
   }
-  aside.top.sidebar nav.tabs.side-tabs button[aria-selected="true"] .ic svg,
-  aside.top.sidebar nav.tabs.side-tabs button .ic svg{
+  aside.top.sidebar nav.tabs.side-tabs button[aria-selected="true"] .ic svg,aside.top.sidebar nav.tabs.side-tabs button .ic svg{
     color:#5DD62C!important;stroke:#5DD62C!important;
   }
 }
 @media(max-width:760px){
-  nav.tabs.bottom button .ic,
-  nav.tabs.bottom button[aria-selected="true"] .ic{
+  nav.tabs.bottom button .ic,nav.tabs.bottom button[aria-selected="true"] .ic{
     color:#5DD62C!important;stroke:#5DD62C!important;
   }
   nav.tabs.bottom button[aria-selected="true"]{
     color:#5DD62C!important;
   }
 }
-aside.top.sidebar .sidebar-tools .iconbtn .ic,
-aside.top.sidebar #sync-chip>.ic,
-.period-chip .ic,
-.pagebar-actions .period-chip .ic,
-.iconbtn .ic,
-.pbtn .ic,
-.pact .iconbtn .ic{
+aside.top.sidebar .sidebar-tools .iconbtn .ic,aside.top.sidebar #sync-chip>.ic,.period-chip .ic,.pagebar-actions .period-chip .ic,.iconbtn .ic,.pbtn .ic,.pact .iconbtn .ic{
   color:#5DD62C!important;
   stroke:#5DD62C!important;
   opacity:1!important;
@@ -2568,8 +2277,7 @@ aside.top.sidebar #sync-chip>.ic,
     gap:8px!important;
     flex-wrap:nowrap!important;
   }
-  #sync-chip,
-  .sidebar-tools .iconbtn{
+  #sync-chip,.sidebar-tools .iconbtn{
     width:42px!important;
     min-width:42px!important;
     height:42px!important;
@@ -2578,8 +2286,7 @@ aside.top.sidebar #sync-chip>.ic,
     border-radius:14px!important;
     flex:none!important;
   }
-  #sync-chip>.ic,
-  .sidebar-tools .iconbtn .ic{
+  #sync-chip>.ic,.sidebar-tools .iconbtn .ic{
     width:19px!important;
     height:19px!important;
   }
@@ -2601,8 +2308,7 @@ aside.top.sidebar #sync-chip>.ic,
     grid-column:1 / -1!important;
     min-height:156px!important;
   }
-  .kpi-grid > .metric-card:nth-child(3),
-  .kpi-grid > .metric-card:nth-child(4){
+  .kpi-grid > .metric-card:nth-child(3),.kpi-grid > .metric-card:nth-child(4){
     grid-column:auto!important;
   }
 }
@@ -2623,8 +2329,7 @@ aside.top.sidebar #sync-chip>.ic,
   .sidebar-brand .brand span{
     font-size:17px!important;
   }
-  #sync-chip,
-  .sidebar-tools .iconbtn{
+  #sync-chip,.sidebar-tools .iconbtn{
     width:40px!important;
     min-width:40px!important;
     height:40px!important;
@@ -2769,14 +2474,10 @@ aside.top.sidebar #sync-chip>.ic,
 /* ===== v19 | correção fina de textos escuros no desktop ===== */
 @media(min-width:761px){
   /* Green hero card on desktop dark theme: force white typography */
-  :root[data-theme="dark"] .metric-primary,
-  :root[data-theme="dark"] .metric-primary .metric-value,
-  :root[data-theme="dark"] .metric-primary .metric-label-row,
-  :root[data-theme="dark"] .metric-primary .metric-footnote{
+  :root[data-theme="dark"] .metric-primary,:root[data-theme="dark"] .metric-primary .metric-value,:root[data-theme="dark"] .metric-primary .metric-label-row,:root[data-theme="dark"] .metric-primary .metric-footnote{
     color:#F8F8F8!important;
   }
-  :root[data-theme="dark"] .metric-primary .metric-eyebrow,
-  :root[data-theme="dark"] .metric-primary .metric-meta{
+  :root[data-theme="dark"] .metric-primary .metric-eyebrow,:root[data-theme="dark"] .metric-primary .metric-meta{
     color:rgba(248,248,248,.82)!important;
   }
   :root[data-theme="dark"] .metric-primary .metric-period{
@@ -2797,59 +2498,282 @@ aside.top.sidebar #sync-chip>.ic,
   }
 
   /* Cards intro / descriptive banners on desktop dark theme */
-  :root[data-theme="dark"] .cards-intro,
-  :root[data-theme="dark"] .cards-intro h1,
-  :root[data-theme="dark"] .cards-intro h2,
-  :root[data-theme="dark"] .cards-intro h3,
-  :root[data-theme="dark"] .cards-intro h4,
-  :root[data-theme="dark"] .cards-intro strong{
+  :root[data-theme="dark"] .cards-intro,:root[data-theme="dark"] .cards-intro h1,:root[data-theme="dark"] .cards-intro h2,:root[data-theme="dark"] .cards-intro h3,:root[data-theme="dark"] .cards-intro h4,:root[data-theme="dark"] .cards-intro strong{
     color:#F8F8F8!important;
   }
-  :root[data-theme="dark"] .cards-intro p,
-  :root[data-theme="dark"] .cards-intro small,
-  :root[data-theme="dark"] .cards-intro .hint{
+  :root[data-theme="dark"] .cards-intro p,:root[data-theme="dark"] .cards-intro small,:root[data-theme="dark"] .cards-intro .hint{
     color:rgba(248,248,248,.78)!important;
   }
 
   /* Monthly overview and summary area that was rendering dark text */
-  :root[data-theme="dark"] .month-overview,
-  :root[data-theme="dark"] .month-overview h1,
-  :root[data-theme="dark"] .month-overview h2,
-  :root[data-theme="dark"] .month-overview h3,
-  :root[data-theme="dark"] .month-overview h4,
-  :root[data-theme="dark"] .month-overview strong,
-  :root[data-theme="dark"] .month-head,
-  :root[data-theme="dark"] .month-head *{
+  :root[data-theme="dark"] .month-overview,:root[data-theme="dark"] .month-overview h1,:root[data-theme="dark"] .month-overview h2,:root[data-theme="dark"] .month-overview h3,:root[data-theme="dark"] .month-overview h4,:root[data-theme="dark"] .month-overview strong,:root[data-theme="dark"] .month-head,:root[data-theme="dark"] .month-head *{
     color:#F8F8F8!important;
   }
-  :root[data-theme="dark"] .month-overview p,
-  :root[data-theme="dark"] .month-overview small,
-  :root[data-theme="dark"] .month-overview .hint,
-  :root[data-theme="dark"] .month-overview .muted{
+  :root[data-theme="dark"] .month-overview p,:root[data-theme="dark"] .month-overview small,:root[data-theme="dark"] .month-overview .hint,:root[data-theme="dark"] .month-overview .muted{
     color:rgba(248,248,248,.78)!important;
   }
-  :root[data-theme="dark"] .month-overview .btn,
-  :root[data-theme="dark"] .month-overview .month-nav button{
+  :root[data-theme="dark"] .month-overview .btn,:root[data-theme="dark"] .month-overview .month-nav button{
     color:#F8F8F8!important;
   }
 
   /* Small monthly summary cards */
-  :root[data-theme="dark"] .month-total-card,
-  :root[data-theme="dark"] .month-total-card strong,
-  :root[data-theme="dark"] .month-total-card .v,
-  :root[data-theme="dark"] .month-total-card h3{
+  :root[data-theme="dark"] .month-total-card,:root[data-theme="dark"] .month-total-card strong,:root[data-theme="dark"] .month-total-card .v,:root[data-theme="dark"] .month-total-card h3{
     color:#F8F8F8!important;
   }
-  :root[data-theme="dark"] .month-total-card p,
-  :root[data-theme="dark"] .month-total-card small,
-  :root[data-theme="dark"] .month-total-card .t{
+  :root[data-theme="dark"] .month-total-card p,:root[data-theme="dark"] .month-total-card small,:root[data-theme="dark"] .month-total-card .t{
     color:rgba(248,248,248,.78)!important;
   }
   :root[data-theme="dark"] .mkpi strong{color:#F8F8F8!important}
-  :root[data-theme="dark"] .mkpi small,
-  :root[data-theme="dark"] .mkpi .t{color:rgba(248,248,248,.78)!important}
+  :root[data-theme="dark"] .mkpi small,:root[data-theme="dark"] .mkpi .t{color:rgba(248,248,248,.78)!important}
 }
 
+
+/* ===== v21 | contraste definitivo no desktop em tema escuro ===== */
+/* Tema escuro selecionado manualmente */
+@media(min-width:761px){
+  :root[data-theme="dark"] .metric-primary,:root[data-theme="dark"] .metric-primary .metric-eyebrow,:root[data-theme="dark"] .metric-primary .metric-value,:root[data-theme="dark"] .metric-primary .metric-meta,:root[data-theme="dark"] .metric-primary .metric-footnote,:root[data-theme="dark"] .metric-primary .metric-period,:root[data-theme="dark"] .metric-primary .checkline,:root[data-theme="dark"] .metric-primary .checkline *{
+    color:#F8F8F8!important;
+  }
+
+  :root[data-theme="dark"] .cards-intro,:root[data-theme="dark"] .cards-intro :is(h1,h2,h3,h4,p,strong,b,span,small,label),:root[data-theme="dark"] .month-overview,:root[data-theme="dark"] .month-overview :is(h1,h2,h3,h4,p,strong,b,span,small,label,button),:root[data-theme="dark"] .month-total-card,:root[data-theme="dark"] .month-total-card :is(h1,h2,h3,h4,p,strong,b,span,small,label),:root[data-theme="dark"] .mkpi,:root[data-theme="dark"] .mkpi :is(strong,b,span,small,label){
+    color:#F8F8F8!important;
+  }
+  :root[data-theme="dark"] .cards-intro p,:root[data-theme="dark"] .cards-intro small,:root[data-theme="dark"] .month-overview p,:root[data-theme="dark"] .month-overview small,:root[data-theme="dark"] .month-total-card p,:root[data-theme="dark"] .month-total-card small,:root[data-theme="dark"] .mkpi small,:root[data-theme="dark"] .mkpi .t{
+    color:rgba(248,248,248,.78)!important;
+  }
+  :root[data-theme="dark"] .mkpi.accent strong,:root[data-theme="dark"] .mkpi.danger strong{
+    color:#5DD62C!important;
+  }
+}
+
+/* Tema escuro automático do sistema: html sem data-theme explícito */
+@media(min-width:761px) and (prefers-color-scheme:dark){
+  :root:not([data-theme]) .metric-primary,:root:not([data-theme]) .metric-primary .metric-eyebrow,:root:not([data-theme]) .metric-primary .metric-value,:root:not([data-theme]) .metric-primary .metric-meta,:root:not([data-theme]) .metric-primary .metric-footnote,:root:not([data-theme]) .metric-primary .metric-period,:root:not([data-theme]) .metric-primary .checkline,:root:not([data-theme]) .metric-primary .checkline *{
+    color:#F8F8F8!important;
+  }
+
+  :root:not([data-theme]) .cards-intro,:root:not([data-theme]) .cards-intro :is(h1,h2,h3,h4,p,strong,b,span,small,label),:root:not([data-theme]) .month-overview,:root:not([data-theme]) .month-overview :is(h1,h2,h3,h4,p,strong,b,span,small,label,button),:root:not([data-theme]) .month-total-card,:root:not([data-theme]) .month-total-card :is(h1,h2,h3,h4,p,strong,b,span,small,label),:root:not([data-theme]) .mkpi,:root:not([data-theme]) .mkpi :is(strong,b,span,small,label){
+    color:#F8F8F8!important;
+  }
+  :root:not([data-theme]) .cards-intro p,:root:not([data-theme]) .cards-intro small,:root:not([data-theme]) .month-overview p,:root:not([data-theme]) .month-overview small,:root:not([data-theme]) .month-total-card p,:root:not([data-theme]) .month-total-card small,:root:not([data-theme]) .mkpi small,:root:not([data-theme]) .mkpi .t{
+    color:rgba(248,248,248,.78)!important;
+  }
+  :root:not([data-theme]) .mkpi.accent strong,:root:not([data-theme]) .mkpi.danger strong{
+    color:#5DD62C!important;
+  }
+}
+
+
+/* ===== v22 | legibilidade, contraste e organização ===== */
+:root{--lime-ink:#2C7A12;--track:#E2E7DD}
+:root[data-theme="dark"]{--lime-ink:#5DD62C;--track:#2a2a2a}
+@media(prefers-color-scheme:dark){:root:not([data-theme]){--lime-ink:#5DD62C;--track:#2a2a2a}}
+
+/* 1. Escala mínima de texto: antes havia textos de 7 a 10px */
+.eyebrow,.metric-eyebrow,.panel-kicker,label.f,.mkpi .t,.results-count,.metric-footnote,.mcard .m,.fc .vv,.fc .ll,.prow .num,.badge,.nav-caption,.brand-caption,nav.tabs.bottom button,.period-chip,.metric-period{font-size:11px!important}
+.metric-meta,.meta,.mcard .n,.chart-foot,.sub,.mgroup-meta,.pval small,.panel-header p,.page-heading p,.pmeta span,.card-extra,.card-extra span,.mkpi small,.cards-intro p,.v small,.card-available,.empty p,.category-empty small,.legend-label small,.mgroup-sum small,.tile .meta,.seg button,.view-toggle button,.btn.sm{font-size:12px!important}
+#plist.view-cards .pd{min-width:32px!important;height:30px!important;font-size:12px!important}
+#plist.view-list .pd{min-width:28px!important;height:26px!important;font-size:11px!important}
+#plist.view-cards .dots{max-height:none!important;overflow:visible!important}
+#plist .pmeta,#plist.view-list .pmeta,#plist.view-cards .pmeta{font-size:12px!important}
+#plist.view-list .pmeta{font-size:11px!important}
+#plist.view-list .pitem{font-size:14px!important}
+#plist.view-cards .pitem{font-size:15px!important}
+#plist.view-list .pval{font-size:15px!important}
+.view-toggle button{font-size:12px!important}
+.fcount[hidden]{display:none!important}
+.mcard .v{font-size:18px!important}
+.card-holder small,.card-period small,.card-value-area span{font-size:9px!important}
+.card-holder strong,.card-period strong{font-size:12px!important}
+#m-sub{font-size:13px!important}
+
+/* 2. Card verde do mês: texto escuro sobre verde-lima em qualquer tema (contraste ~9:1) */
+:root:root .kpi-grid .metric-primary{background:linear-gradient(135deg,#86E557 0%,#4FC722 100%)!important;color:#0F0F0F!important}
+:root:root .kpi-grid .metric-primary :is(.metric-value,.metric-footnote,.checkline,#r-check-lbl){color:#0F0F0F!important}
+:root:root .kpi-grid .metric-primary :is(.metric-eyebrow,.metric-meta){color:rgba(15,15,15,.82)!important}
+:root:root .kpi-grid .metric-primary .metric-period{color:#0F0F0F!important;background:rgba(15,15,15,.13)!important}
+:root:root .kpi-grid .metric-primary .checkline{background:rgba(15,15,15,.10)!important;border:1px solid rgba(15,15,15,.24)!important}
+:root:root .kpi-grid .metric-primary .checkline .cbox{border:2px solid rgba(15,15,15,.72)!important;background:transparent!important;color:transparent!important}
+:root:root .kpi-grid .metric-primary .checkline.is-paid .cbox{background:#0F0F0F!important;border-color:#0F0F0F!important;color:#86E557!important}
+:root:root .kpi-grid .metric-primary .checkline:disabled{opacity:.6}
+
+/* 3. Verde como TEXTO no tema claro: tom mais escuro para ler sobre fundo claro */
+:root[data-theme="light"] :is(.eyebrow,.panel-kicker,.mkpi.accent strong,.mgroup-title+*,.metric-icon,.pitem+*){color:var(--lime-ink)}
+:root[data-theme="light"] .eyebrow,:root[data-theme="light"] .panel-kicker{color:var(--lime-ink)!important}
+:root[data-theme="light"] :is(.pact .iconbtn,.prow>.iconbtn,.mnav .iconbtn){color:var(--lime-ink)!important}
+:root[data-theme="light"] .mkpi.accent strong{color:var(--lime-ink)!important}
+@media(prefers-color-scheme:light){
+  :root:not([data-theme]) .eyebrow,:root:not([data-theme]) .panel-kicker{color:var(--lime-ink)!important}
+  :root:not([data-theme]) :is(.pact .iconbtn,.prow>.iconbtn,.mnav .iconbtn){color:var(--lime-ink)!important}
+  :root:not([data-theme]) .mkpi.accent strong{color:var(--lime-ink)!important}
+}
+
+/* 4. Trilhos das barras de progresso: no tema claro pareciam barras 100% pretas */
+:root[data-theme="light"] :is(.bar,.mgroup-bar,.prow-progress,.card-limit){background:var(--track)!important}
+@media(prefers-color-scheme:light){:root:not([data-theme]) :is(.bar,.mgroup-bar,.prow-progress,.card-limit){background:var(--track)!important}}
+
+/* 5. Chips de parcela: atraso em vermelho (antes ficava verde, igual ao "pago") */
+:root:root .pd.vencido{background:var(--red-soft)!important;border-color:var(--red)!important;color:var(--red)!important}
+:root:root .pd.parc{border-style:dashed!important;border-color:var(--lime-ink)!important}
+:root:root .pd.pago{background:#337418!important;border-color:#337418!important;color:#fff!important}
+.pd-legend{display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;margin:0 2px 14px;font-size:12px;color:var(--muted)}
+.pd-legend span{display:inline-flex;align-items:center;gap:6px}
+.pd-legend .pd{display:inline-grid;place-items:center;min-width:24px!important;width:24px;height:24px!important;padding:0!important;font-size:11px!important;font-style:normal;pointer-events:none;border-radius:8px}
+.pd-legend em{font-style:normal;flex-basis:100%}
+@media(min-width:761px){.pd-legend em{flex-basis:auto;margin-left:auto}}
+
+/* 6. Vencidas só ficam em destaque quando há atraso de verdade */
+:root:root .mkpi.danger strong{color:var(--text)!important}
+:root:root .mkpi.danger.on strong{color:var(--red)!important}
+.venc-nudge{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 16px;padding:14px 16px;margin:0 0 14px;border-radius:14px;border:1px dashed color-mix(in srgb,var(--lime-ink) 55%,var(--line));background:color-mix(in srgb,var(--lime-ink) 8%,transparent)}
+.venc-nudge b{display:block;font-size:14px}
+.venc-nudge span{display:block;font-size:12px;color:var(--muted);margin-top:2px}
+.nudge-btns{display:flex;gap:8px;flex-wrap:wrap}
+.nudge-btns .btn{gap:6px}
+
+/* 7. Filtros recolhíveis (celular) */
+.search-row{display:flex;gap:8px;align-items:stretch}
+.search-row input{flex:1;min-width:0}
+.filters-toggle{display:none;position:relative;gap:6px;white-space:nowrap}
+.filters-toggle .fcount{display:inline-grid;place-items:center;min-width:18px;height:18px;padding:0 5px;border-radius:99px;background:var(--lime-ink);color:#0F0F0F;font-size:11px}
+:root[data-theme="light"] .filters-toggle .fcount{color:#fff}
+.bk-warn,#bk-status.warn{color:var(--red)!important;font-weight:700}
+@media(max-width:760px){
+  .filters-toggle{display:inline-flex}
+  .filters-panel:not([data-open]) .filters>div:not(.search),.filters-panel:not([data-open]) .status-filter{display:none!important}
+  .filters-panel:not([data-open]) .filters{margin-bottom:0}
+  .filters-panel[data-open] .filters-toggle{border-color:var(--lime-ink)}
+  .filters .search{grid-column:1/-1}
+  .filters-footer{flex-wrap:wrap;gap:10px}
+  .purchase-tools{flex-wrap:wrap;gap:10px;width:100%}
+  /* 8. Por mês: indicadores em 2x2 */
+  .month-kpis{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important}
+  .mkpi{padding:12px 14px!important;min-height:0!important}
+  .mkpi strong{font-size:24px!important}
+  /* 9. Cabeçalho do celular sem repetir a marca */
+  .page-heading .eyebrow{display:none}
+  /* status da nuvem visível só com ícone */
+  #sync-chip{position:relative}
+  #sync-chip::after{content:"";position:absolute;top:5px;right:5px;width:9px;height:9px;border-radius:50%;background:#8a8a8a;border:2px solid var(--surface)}
+  #sync-chip[data-state="ok"]::after{background:#5DD62C}
+  #sync-chip[data-state="err"]::after{background:var(--red)}
+  #sync-chip[data-state="ok"]>.ic{color:var(--lime-ink)}
+}
+
+/* 10. Barra lateral no PC: sempre com rótulos em telas largas; sem "pulo" do conteúdo no hover em telas médias */
+@media(min-width:761px) and (max-width:899px){
+  /* telas estreitas: menu só com ícones, sem expandir por cima do conteúdo */
+  
+  main.wrap.app-main{margin-left:76px!important}
+  
+}
+@media(min-width:900px){
+  :root{--sidebar-w:clamp(204px,19vw,236px)}
+  aside.top.sidebar{width:var(--sidebar-w)!important;box-shadow:none!important}
+  main.wrap.app-main{margin-left:var(--sidebar-w)!important}
+  .sidebar .sidebar-brand .brand span,.sidebar .brand-caption,.sidebar .nav-caption,.sidebar #sync-chip .sync-copy,.sidebar #sync-chip .sync-arrow,.sidebar nav.tabs.side-tabs button span{opacity:1!important;visibility:visible!important;transform:none!important;pointer-events:auto!important}
+  .sidebar .sidebar-brand .brand{justify-content:flex-start!important;gap:11px!important}
+  .sidebar .sidebar-brand .brand img{width:42px!important;height:42px!important}
+  .sidebar nav.tabs.side-tabs button{justify-content:flex-start!important;padding:4px 9px!important}
+  .sidebar nav.tabs.side-tabs button .ic{width:38px!important;height:38px!important;padding:10px!important}
+  .sidebar nav.tabs.side-tabs button span{font-size:13px!important;font-weight:750}
+  .sidebar #sync-chip{padding:10px 12px!important;justify-content:flex-start!important}
+  .sidebar .sidebar-tools{flex-direction:row!important;align-items:stretch!important}
+  .sidebar .sidebar-tools .iconbtn{width:42px!important;height:42px!important}
+  .nav-caption{font-size:11px!important}
+}
+
+/* 10b. Barra fixa em telas largas: reaplica o visual "expandido" também sem hover */
+@media(min-width:900px){
+  :root aside.top.sidebar .sidebar-inner{padding:18px 12px 17px!important}
+  :root aside.top.sidebar nav.tabs.side-tabs button{flex:0 0 48px!important;width:100%!important;min-width:0!important;max-width:100%!important;height:48px!important;min-height:48px!important;max-height:48px!important;margin:0!important;padding:4px 8px!important;justify-content:flex-start!important;gap:11px!important}
+  :root aside.top.sidebar nav.tabs.side-tabs button span{display:block!important;width:auto!important;min-width:0!important;max-width:none!important;overflow:visible!important;opacity:1!important;visibility:visible!important}
+  :root aside.top.sidebar nav.tabs.side-tabs button .ic{flex:0 0 38px!important;width:38px!important;min-width:38px!important;max-width:38px!important;height:38px!important;min-height:38px!important;max-height:38px!important;padding:10px!important}
+  :root aside.top.sidebar :is(.sidebar-brand .brand span,.brand-caption,.nav-caption){display:block!important;opacity:1!important;visibility:visible!important;transform:none!important}
+  :root aside.top.sidebar .sidebar-brand .brand{justify-content:flex-start!important;gap:11px!important}
+  :root aside.top.sidebar #sync-chip .sync-copy{display:flex!important;opacity:1!important;visibility:visible!important;transform:none!important}
+  :root aside.top.sidebar #sync-chip .sync-arrow{display:block!important;opacity:1!important;visibility:visible!important;transform:none!important}
+  :root aside.top.sidebar #sync-chip{width:100%!important;max-width:none!important;padding:10px 12px!important;justify-content:flex-start!important}
+  :root aside.top.sidebar .sidebar-tools{flex-direction:row!important;align-items:stretch!important;justify-content:flex-start!important}
+}
+
+@media(min-width:900px){
+  :root aside.top.sidebar .sidebar-brand{align-items:flex-start!important;padding:2px 4px 22px!important}
+  :root aside.top.sidebar .sidebar-brand .brand{width:100%!important;justify-content:flex-start!important;gap:11px!important}
+  :root aside.top.sidebar .sidebar-brand .brand span{display:inline-block!important;width:auto!important;min-width:0!important;max-width:none!important;overflow:visible!important;margin:0!important;color:var(--text)!important;font-size:19px!important;white-space:nowrap}
+  :root aside.top.sidebar .brand-caption{margin:6px 0 0 53px!important;text-align:left!important}
+  :root aside.top.sidebar #sync-chip{display:flex!important;flex-direction:row!important;align-items:center!important;gap:11px!important;height:auto!important;min-height:56px!important}
+  :root aside.top.sidebar #sync-chip>.ic{margin:0!important;flex:none!important}
+  :root aside.top.sidebar #sync-chip .sync-copy{flex-direction:column!important;align-items:flex-start!important;gap:2px!important;min-width:0!important;text-align:left!important}
+  :root aside.top.sidebar #sync-chip .sync-copy small{display:block!important;position:static!important;font-size:10px!important}
+  :root aside.top.sidebar #sync-chip .sync-copy strong{display:block!important;font-size:12px!important}
+  :root aside.top.sidebar #sync-chip .sync-arrow{margin-left:auto!important;position:static!important}
+  :root aside.top.sidebar .sidebar-tools{margin:0!important;padding:0!important;width:100%!important;gap:8px!important}
+  :root aside.top.sidebar .sidebar-foot{width:100%!important;align-items:stretch!important}
+}
+
+@media(min-width:900px){
+  :root aside.top.sidebar .sidebar-brand .brand img{margin:0 0 0 4px!important;flex:none!important}
+  :root aside.top.sidebar .brand-caption{margin:8px 0 0 4px!important;font-size:10px!important;letter-spacing:.12em!important;white-space:nowrap!important}
+  :root aside.top.sidebar #sync-chip #sync-txt{display:block!important;font-size:12px!important;font-weight:700!important;color:var(--text)!important;opacity:1!important;visibility:visible!important;height:auto!important;width:auto!important;max-width:none!important;white-space:nowrap!important}
+}
+
+@media(min-width:900px){
+  :root aside.top.sidebar #sync-chip .sync-copy{width:auto!important;height:auto!important;max-height:none!important;flex:1 1 auto!important;overflow:visible!important}
+  :root aside.top.sidebar #sync-chip #sync-txt{max-height:none!important;height:auto!important;line-height:1.3!important;overflow:visible!important}
+}
+
+
+@media(min-width:761px) and (max-width:899px){
+  :root aside.top.sidebar{width:76px!important}
+}
+@media(min-width:900px){
+  :root aside.top.sidebar #sync-chip{width:100%!important;max-width:none!important;min-width:0!important}
+}
+
+/* ===== v22 | hover sem mexer no texto: nada de espaçamento, tamanho ou deslocamento em painéis ===== */
+:root .panel:hover .panel-kicker{letter-spacing:.16em!important}
+:root .panel .panel-kicker{transition:color .2s ease!important;letter-spacing:.16em!important}
+
+/* ===== v22 | MOVIMENTO em todos os cards =====
+   Regra de ouro: só se mexe a posição, a sombra e o brilho do card.
+   Nunca tamanho, espaçamento ou peso do texto. */
+:root{--lift:-3px;--ease:cubic-bezier(.2,.75,.25,1);
+  --lift-shadow:0 18px 38px rgba(25,55,43,.16);--lift-ring:color-mix(in srgb,var(--lime-ink) 45%,transparent)}
+:root[data-theme="dark"]{--lift-shadow:0 20px 42px rgba(0,0,0,.50)}
+@media(prefers-color-scheme:dark){:root:not([data-theme]){--lift-shadow:0 20px 42px rgba(0,0,0,.50)}}
+
+/* base: todo card tem transição suave de posição e sombra */
+:root :is(.metric-card,.panel,.mcard,.tile,.pcard,.filters-panel,.month-overview,.month-total-card,.mkpi,.mgroup,.prow,.card-illus-wrap,.cards-intro,.venc-nudge,.alert,.empty,.pd-legend,.snap){
+  transition:transform .28s var(--ease),box-shadow .28s var(--ease),border-color .28s ease,background-color .28s ease!important}
+/* hover: sobe e ganha sombra + contorno verde (sem alterar o texto) */
+:root :is(.metric-card,.panel,.mcard,.tile,.pcard,.filters-panel,.month-overview,.month-total-card,.mkpi,.mgroup,.cards-intro,.venc-nudge,.card-illus-wrap):hover{
+  transform:translateY(var(--lift))!important;box-shadow:var(--lift-shadow),0 0 0 1px var(--lift-ring)!important}
+:root :is(.prow,.alert,.empty,.pd-legend,.snap):hover{
+  transform:translateY(-2px)!important;box-shadow:var(--lift-shadow),0 0 0 1px var(--lift-ring)!important}
+/* o card verde mantém o brilho dele e ganha só a sombra maior */
+:root .kpi-grid .metric-primary:hover{box-shadow:0 22px 46px rgba(79,199,34,.38)!important}
+/* clicar: o card "afunda" de volta, como um botão */
+:root :is(.mcard,.tile,.pcard,.prow,.card-illus-wrap,.metric-card):active{transform:translateY(0)!important;box-shadow:0 6px 14px rgba(0,0,0,.18)!important;transition-duration:.08s!important}
+/* cartões ilustrados: reflexo passa pelo cartão ao passar o mouse */
+.card-glow::after{content:"";position:absolute;inset:-20% auto -20% -60%;width:42%;pointer-events:none;
+  background:linear-gradient(105deg,transparent,rgba(255,255,255,.22),transparent);transform:translateX(0) skewX(-18deg);opacity:0}
+.card-illus-wrap:hover .card-glow::after{animation:fc-shine .9s var(--ease) 1}
+@keyframes fc-shine{0%{opacity:0;transform:translateX(0) skewX(-18deg)}15%{opacity:1}100%{opacity:0;transform:translateX(520%) skewX(-18deg)}}
+/* números sem tremer enquanto contam */
+:is(#r-valor,#d-val,#d-paid,#d-pend,#m-total,.tile .val,.mkpi strong,.card-value-area strong,.mcard .v){font-variant-numeric:tabular-nums}
+/* barras crescem da esquerda; colunas do gráfico crescem de baixo */
+:is(.bar,.mgroup-bar,.prow-progress,.card-limit)>i{transform-origin:left center}
+.fc .b{transform-origin:center bottom}
+/* diálogos e avisos entram deslizando */
+dialog[open]{animation:fc-dlg .32s var(--ease)}
+dialog[open]::backdrop{animation:fc-fade .28s ease}
+.toast{animation:fc-toast .34s var(--ease)}
+@keyframes fc-dlg{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes fc-fade{from{opacity:0}to{opacity:1}}
+@keyframes fc-toast{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+/* chip pago/atrasado/botões de marcar: pulso em anel ao clicar fica no JS */
+@media(prefers-reduced-motion:reduce){:root :is(.metric-card,.panel,.mcard,.tile,.pcard,.filters-panel,.month-overview,.month-total-card,.mkpi,.mgroup,.prow,.card-illus-wrap,.cards-intro,.venc-nudge,.alert,.empty):hover{transform:none!important}}
 </style>
 </head>
 <body>
@@ -2894,7 +2818,7 @@ aside.top.sidebar #sync-chip>.ic,
     </div>
     <div class="nav-caption">MENU PRINCIPAL</div>
     <nav class="tabs side-tabs" role="tablist" aria-label="Seções" id="tabs-top">
-      <button role="tab" data-tab="resumo" aria-selected="true" title="Visão geral"><svg class="ic"><use href="#i-nav-dashboard"/></svg><span>Visão geral</span></button>
+      <button role="tab" data-tab="resumo" aria-selected="true" title="Resumo"><svg class="ic"><use href="#i-nav-dashboard"/></svg><span>Resumo</span></button>
       <button role="tab" data-tab="compras" aria-selected="false" title="Compras"><svg class="ic"><use href="#i-nav-shopping"/></svg><span>Compras</span></button>
       <button role="tab" data-tab="mes" aria-selected="false" title="Por mês"><svg class="ic"><use href="#i-nav-calendar"/></svg><span>Por mês</span></button>
       <button role="tab" data-tab="cartoes" aria-selected="false" title="Cartões"><svg class="ic"><use href="#i-nav-card"/></svg><span>Cartões</span></button>
@@ -2918,11 +2842,11 @@ aside.top.sidebar #sync-chip>.ic,
   <div class="pagebar">
     <div class="page-heading">
       <div class="eyebrow">FATURA CERTA <span> / </span> FINANÇAS PESSOAIS</div>
-      <h1 id="page-title">Visão geral</h1>
+      <h1 id="page-title">Resumo</h1>
       <p id="page-subtitle">Acompanhe suas faturas, parcelas e pagamentos em um só lugar.</p>
     </div>
     <div class="pagebar-actions">
-      <div class="period-chip"><svg class="ic"><use href="#i-cal"/></svg><span>Seu painel financeiro</span></div>
+      <div class="period-chip" title="Mês atual"><svg class="ic"><use href="#i-cal"/></svg><span id="period-txt">Mês atual</span></div>
       <button class="btn primary btn-new desk" data-act="new"><svg class="ic"><use href="#i-plus"/></svg>Nova compra</button>
     </div>
   </div>
@@ -3016,8 +2940,8 @@ aside.top.sidebar #sync-chip>.ic,
           <div class="panel-header">
             <div>
               <div class="panel-kicker">DISTRIBUIÇÃO</div>
-              <h2>Em aberto por categoria</h2>
-              <p>Saldo pendente por tipo de compra</p>
+              <h2 id="cat-title">Em aberto por categoria</h2>
+              <p id="cat-sub">Saldo pendente por tipo de compra</p>
             </div>
           </div>
           <div id="cats" class="category-chart"></div>
@@ -3041,7 +2965,7 @@ aside.top.sidebar #sync-chip>.ic,
   <section id="sec-compras" role="tabpanel" hidden>
     <div class="filters-panel">
       <div class="filters">
-        <div class="search"><label class="f" for="f-q">Buscar compra</label><input id="f-q" type="search" placeholder="Item, loja ou cartão"></div>
+        <div class="search"><label class="f" for="f-q">Buscar compra</label><div class="search-row"><input id="f-q" type="search" placeholder="Item, loja ou cartão"><button type="button" class="btn filters-toggle" id="f-toggle" data-act="filters-toggle" aria-expanded="false"><svg class="ic"><use href="#i-sliders"/></svg><span>Filtros</span><b class="fcount" id="f-count" hidden>0</b></button></div></div>
         <div><label class="f" for="f-card">Cartão</label><select id="f-card"></select></div>
         <div><label class="f" for="f-cat">Categoria</label><select id="f-cat"></select></div>
         <div><label class="f" for="f-year">Ano</label><select id="f-year"></select></div>
@@ -3056,6 +2980,13 @@ aside.top.sidebar #sync-chip>.ic,
           <div class="status-filter"><label class="f" for="f-status">Situação</label><select id="f-status"><option value="">Todas</option><option value="ativa">Com parcelas em aberto</option><option value="concluida">Concluídas</option></select></div>
         </div>
       </div>
+    </div>
+    <div class="pd-legend" aria-label="Legenda das parcelas">
+      <span><i class="pd pago">1</i>Paga</span>
+      <span><i class="pd">2</i>A vencer</span>
+      <span><i class="pd vencido">3</i>Em atraso</span>
+      <span><i class="pd parc">4</i>Pago em parte</span>
+      <em>Toque na parcela para marcar como paga.</em>
     </div>
     <div class="plist" id="plist"></div>
   </section>
@@ -3150,6 +3081,7 @@ aside.top.sidebar #sync-chip>.ic,
   <div class="sec" style="border:0;padding:0">
     <h4>Sincronizar entre PC e celular (Supabase)</h4>
     <div id="sync-off">
+      <small class="hint" id="sync-expired" hidden style="display:block;margin-bottom:8px;padding:10px 12px;border-radius:10px;background:var(--red-soft);color:var(--red);font-weight:700">Sua sessão expirou. Seus dados continuam salvos neste aparelho. Digite só a senha para voltar a sincronizar.</small>
       <small class="hint">Opcional. Rode o arquivo <b>Supabase_fatura.sql</b> uma vez no seu projeto e entre com o mesmo e-mail do DS Gestão.</small>
       <form id="form-sync" style="display:flex;flex-direction:column;gap:10px;margin-top:10px" autocomplete="on">
         <div><label class="f" for="s-url">URL do projeto</label><input id="s-url" type="url" placeholder="https://xxxx.supabase.co" autocomplete="off"></div>
@@ -3273,16 +3205,18 @@ function toast(msg,type='ok',withUndo=false){
 function renderAll(){renderResumo();renderCompras();renderMes();renderCartoes();renderWarn()}
 function showTab(t){
   tab=t;
+  {const n=todayYM();const pt=$('period-txt');if(pt)pt.textContent=`${MESES[n.m]} de ${n.y}`}
   document.querySelectorAll('[data-tab]').forEach(b=>b.setAttribute('aria-selected',b.dataset.tab===t));
   ['resumo','compras','mes','cartoes'].forEach(x=>$('sec-'+x).hidden=x!==t);
   const copy={
-    resumo:['Visão geral','Acompanhe suas faturas, parcelas e pagamentos em um só lugar.'],
+    resumo:['Resumo','Acompanhe suas faturas, parcelas e pagamentos em um só lugar.'],
     compras:['Compras','Consulte suas compras e acompanhe cada parcela.'],
     mes:['Faturas por mês','Confira os valores previstos, pagamentos e parcelas de cada mês.'],
     cartoes:['Cartões','Acompanhe o comprometimento das compras em cada cartão.']
   }[t];
   if(copy){$('page-title').textContent=copy[0];$('page-subtitle').textContent=copy[1]}
   window.scrollTo({top:0});
+  animateIn($('sec-'+t));
 }
 function renderResumo(){
   const t=todayYM(), its=instMonth(t.y,t.m), pend=its.filter(i=>!i.paid), tot=sumRest(its), pago=r2(its.reduce((s,i)=>s+i.valor-i.rest,0));
@@ -3296,7 +3230,7 @@ function renderResumo(){
   /* alertas */
   const al=[]; const today=new Date(); today.setHours(0,0,0,0);
   const atrasoAnt=sumRest(inst().filter(i=>statusOf(i)==='vencido'));
-  if(atrasoAnt>0) al.push(`<div class="alert">${ic('bell')}<span>Você tem ${fmt(atrasoAnt)} em parcelas de meses anteriores ainda em aberto.</span></div>`);
+  if(atrasoAnt>0) al.push(`<div class="alert">${ic('bell')}<span>Você tem ${fmt(atrasoAnt)} em parcelas de meses anteriores ainda em aberto.${tot>0?` Somado à fatura deste mês, são <b>${fmt(r2(atrasoAnt+tot))}</b> a pagar agora.`:''}</span></div>`);
   for(const c of cardsAll()){
     const v=parseInt(S.cartoes[c]?.venc); if(!v) continue;
     const pc=sumRest(its.filter(i=>(i.p.cartao||'')===c)); if(pc<=0) continue;
@@ -3332,8 +3266,13 @@ function renderResumo(){
   $('d-pend').textContent=String(pendentesAll);
 
   /* distribuição por categoria: mesma base de parcelas, apresentada em gráfico */
-  const cat={}; all.forEach(i=>{if(i.rest>0){const c=i.p.categoria||'Sem categoria';cat[c]=r2((cat[c]||0)+i.rest)}});
-  const cs=Object.entries(cat).sort((a,b)=>b[1]-a[1]);
+  /* Sem nenhuma categoria preenchida, agrupar por categoria só mostraria "Sem categoria 100%". Aí mostramos por loja. */
+  const hasCat=all.some(i=>i.rest>0&&i.p.categoria), grp=hasCat?(i=>i.p.categoria||'Sem categoria'):(i=>i.p.loja||'Sem loja');
+  $('cat-title').textContent=hasCat?'Em aberto por categoria':'Em aberto por loja';
+  $('cat-sub').textContent=hasCat?'Saldo pendente por tipo de compra':'Saldo pendente por loja. Preencha a categoria nas compras para ver por tipo de gasto.';
+  const cat={}; all.forEach(i=>{if(i.rest>0){const c=grp(i);cat[c]=r2((cat[c]||0)+i.rest)}});
+  let cs=Object.entries(cat).sort((a,b)=>b[1]-a[1]);
+  if(cs.length>6){const resto=cs.slice(5);cs=[...cs.slice(0,5),[`Outras (${resto.length})`,r2(resto.reduce((a,x)=>a+x[1],0))]]}
   const catTotal=r2(cs.reduce((s,x)=>s+x[1],0));
   const palette=['#18d6a0','#5b8def','#f2b84b','#a78bfa','#ef7186','#35b7c8','#ef9561','#8ca7b2'];
   if(cs.length){
@@ -3344,7 +3283,7 @@ function renderResumo(){
     });
     const ring=`conic-gradient(${slices.join(',')})`;
     $('cats').innerHTML=`<div class="category-layout">
-      <div class="donut" style="background:${ring}" role="img" aria-label="Distribuição de ${fmt(catTotal)} em aberto por categoria">
+      <div class="donut" style="background:${ring}" role="img" aria-label="Distribuição de ${fmt(catTotal)} em aberto por ${hasCat?'categoria':'loja'}">
         <div class="donut-center"><strong>${fmt(catTotal)}</strong><small>em aberto</small></div>
       </div>
       <div class="category-legend">${cs.map(([name,value],i)=>`<div class="legend-item">
@@ -3389,8 +3328,12 @@ function setPurchaseView(mode){
   try{localStorage.setItem('fc_purchase_view_v2',purchaseView)}catch{}
   applyPurchaseView();
 }
+function updateFilterBadge(){
+  const n=['f-card','f-cat','f-year','f-status'].filter(i=>$(i)&&$(i).value).length, b=$('f-count');
+  if(b){b.textContent=String(n);b.hidden=!n}
+}
 function renderCompras(){
-  fillFilters();
+  fillFilters(); updateFilterBadge();
   const box=$('plist');
   applyPurchaseView();
   if(!S.purchases.length){$('c-count').textContent='0 compras';box.innerHTML=`<div class="empty">${ic('list')}<h3>Nenhuma compra ainda</h3><p>Toque em “+” para cadastrar ou abra Dados para restaurar um backup.</p></div>`;return}
@@ -3442,10 +3385,13 @@ function renderMes(){
   const header = `<div class="month-kpis">
     <div class="mkpi"><span class="t">Quitadas</span><strong>${paidCount}</strong><small>${fmt(paidVal)}</small></div>
     <div class="mkpi"><span class="t">Em aberto</span><strong>${openCount}</strong><small>${fmt(sumRest(its.filter(i=>!i.paid&&statusOf(i)!=='vencido')))}</small></div>
-    <div class="mkpi danger"><span class="t">Vencidas</span><strong>${lateCount}</strong><small>${fmt(sumRest(its.filter(i=>statusOf(i)==='vencido')))}</small></div>
+    <div class="mkpi danger${lateCount?' on':''}"><span class="t">Vencidas</span><strong>${lateCount}</strong><small>${fmt(sumRest(its.filter(i=>statusOf(i)==='vencido')))}</small></div>
     <div class="mkpi accent"><span class="t">Total do mês</span><strong>${its.length}</strong><small>${fmt(total)}</small></div>
   </div>`;
 
+  const semCards=[...new Set(its.filter(i=>!parseInt(S.cartoes[i.p.cartao||'']?.venc)).map(i=>i.p.cartao).filter(Boolean))];
+  const nudge=semCards.length?`<div class="venc-nudge"><div><b>Defina o dia de vencimento</b><span>Assim as parcelas se agrupam por data e você recebe aviso antes de vencer.</span></div><div class="nudge-btns">${semCards.slice(0,3).map(c=>`<button class="btn sm" data-act="card-edit" data-name="${esc(c)}">${ic('card')}${esc(c)}</button>`).join('')}</div></div>`:'';
+  const tt=todayYM(), isNow=view.y===tt.y&&view.m===tt.m;
   const groups={};
   its.forEach(i=>{
     const due=parseInt(S.cartoes[i.p.cartao||'']?.venc);
@@ -3459,8 +3405,10 @@ function renderMes(){
     const arr=groups[k];
     const subtotal=sumRest(arr), subtotalTotal=r2(arr.reduce((s,i)=>s+i.valor,0));
     const paidGroup=r2(subtotalTotal-subtotal);
-    const title=k==='sem'?'Sem vencimento definido':`Vence dia ${k}`;
-    const meta=`${plural(arr.length,'parcela','parcelas')} · ${fmt(subtotal)} em aberto`;
+    const title=k==='sem'?'Sem dia de vencimento':`Vence dia ${k}`;
+    let dueTxt='';
+    if(isNow&&k!=='sem'&&subtotal>0){const dim=new Date(tt.y,tt.m+1,0).getDate(), dd=new Date(tt.y,tt.m,Math.min(+k,dim)), hoje=new Date(); hoje.setHours(0,0,0,0); const dias=Math.round((dd-hoje)/864e5); dueTxt=dias<0?` · venceu há ${plural(-dias,'dia','dias')}`:dias===0?' · vence hoje':` · vence em ${plural(dias,'dia','dias')}`}
+    const meta=`${plural(arr.length,'parcela','parcelas')} · ${fmt(subtotal)} em aberto${dueTxt}`;
     const progress=Math.max(0,Math.min(100,Math.round((paidGroup/(subtotalTotal||1))*100)));
     return `<section class="mgroup">
       <div class="mgroup-head">
@@ -3506,7 +3454,7 @@ function renderMes(){
     </section>`;
   }).join('');
 
-  $('m-list').innerHTML = header + groupHtml;
+  $('m-list').innerHTML = header + nudge + groupHtml;
 }
 function renderCartoes(){
   const all=inst(), t=todayYM();
@@ -3556,14 +3504,18 @@ function renderWarn(){
   const ts=Number(localStorage.getItem(LAST_BK)||0), days=ts?Math.floor((Date.now()-ts)/864e5):null;
   const syncing=!!(sync&&sync.session);
   $('warn-dot').hidden=!(S.purchases.length&&!syncing&&(days===null||days>=7));
-  $('bk-status').textContent=ts?(days===0?'Último backup baixado: hoje.':`Último backup baixado há ${plural(days,'dia','dias')}.`):'Você ainda não baixou nenhum backup.';
+  const wd=!$('warn-dot').hidden;
+  $('bk-status').textContent=ts?(days===0?'Último backup baixado: hoje.':`Último backup baixado há ${plural(days,'dia','dias')}.${wd?' Baixe um novo para não perder seus dados.':''}`):'Você ainda não baixou nenhum backup. Baixe um agora para não perder seus dados.';
+  $('bk-status').classList.toggle('warn',wd);
+  const wb=$('warn-dot').parentElement; if(wb) wb.title=wd?'Dados e backup · há backup pendente':'Dados e backup';
 }
 
 /* ── Ações de dados ── */
-function toggleKey(k){mutate(()=>{if(S.paid[k]) delete S.paid[k]; else {S.paid[k]=1; delete S.parcial[k]}})}
+function toggleKey(k){mutate(()=>{if(S.paid[k]) delete S.paid[k]; else {S.paid[k]=1; delete S.parcial[k]}}); document.querySelectorAll('[data-key="'+k+'"]').forEach(el=>pulse(el))}
 function toggleMonth(y,m){
   const a=instMonth(y,m); if(!a.length) return; const all=a.every(i=>i.paid);
   mutate(()=>{a.forEach(i=>{if(all) delete S.paid[i.key]; else {S.paid[i.key]=1; delete S.parcial[i.key]}})},all?`${MESES[m]} desmarcado.`:`${MESES[m]} marcado como pago.`);
+  document.querySelectorAll(`.mcheck[data-y="${y}"][data-m="${m}"],#r-check,#m-toggle`).forEach(el=>{if(el.offsetParent!==null) pulse(el)});
 }
 const canonCard=v=>cardsAll().find(c=>c.toLowerCase()===v.toLowerCase())||v;
 const newId=()=>'p_'+Date.now().toString(36)+'_'+Math.random().toString(36).slice(2,7);
@@ -3738,20 +3690,107 @@ function verify(){
 /* ── Sincronização Supabase (REST, sem biblioteca) ── */
 let sync=null; try{sync=JSON.parse(localStorage.getItem(SYNC_KEY)||'null')}catch{}
 let syncTimer=null, syncBusy=false;
-const saveSync=()=>{try{sync?localStorage.setItem(SYNC_KEY,JSON.stringify(sync)):localStorage.removeItem(SYNC_KEY)}catch{}};
-function setSync(state,txt){
-  const c=$('sync-chip'); c.className='chip'+(state==='ok'?' ok':state==='err'?' warn':''); $('sync-txt').textContent=txt;
+/* ── Sessão: um único dono do token ──────────────────────────────────────────
+   O Supabase troca o refresh_token a cada renovação (uso único). Se duas abas /
+   o app instalado + o navegador renovarem com o mesmo token, o servidor entende
+   como roubo e encerra a sessão. Por isso: (1) a renovação roda dentro de um
+   lock entre abas, (2) antes de renovar e antes de gravar relemos o
+   localStorage e adotamos o token mais novo, (3) o token novo é gravado na hora,
+   (4) falha de rede nunca derruba a sessão, (5) se a sessão realmente morrer,
+   URL/chave/e-mail ficam guardados e só a senha é pedida. */
+function readSyncStore(){try{return JSON.parse(localStorage.getItem(SYNC_KEY)||'null')}catch{return null}}
+function adoptNewerSession(){
+  const st=readSyncStore();
+  if(!st||!sync||st.url!==sync.url||!st.session) return false;
+  if(!sync.session||(st.session.expires_at||0)>(sync.session.expires_at||0)){sync.session=st.session;delete sync.expired;return true}
+  return false;
 }
-async function sb(path,{method='GET',body,headers={},auth=true}={}){
+function saveSync(force){
+  try{
+    if(!sync){localStorage.removeItem(SYNC_KEY);return}
+    if(!force) adoptNewerSession();
+    localStorage.setItem(SYNC_KEY,JSON.stringify(sync));
+  }catch{}
+}
+function setSync(state,txt){
+  const c=$('sync-chip'); c.className='chip'+(state==='ok'?' ok':state==='err'?' warn':''); c.dataset.state=state||'idle'; c.setAttribute('aria-label','Sincronização: '+txt); c.title='Sincronização: '+txt; $('sync-txt').textContent=txt;
+}
+const wait=ms=>new Promise(r=>setTimeout(r,ms));
+async function sb(path,{method='GET',body,headers={},auth=true,retried=false}={}){
   if(auth) await ensureToken();
   const r=await fetch(sync.url.replace(/\/+$/,'')+path,{method,headers:{apikey:sync.key,'Content-Type':'application/json',...(auth?{Authorization:'Bearer '+sync.session.access_token}:{}),...headers},body:body?JSON.stringify(body):undefined});
-  if(!r.ok){const t=await r.text().catch(()=>'');const e=new Error(t||('HTTP '+r.status));e.status=r.status;throw e}
+  if(!r.ok){
+    /* token recusado (relógio errado, revogado…): renova uma vez e tenta de novo */
+    if(auth&&r.status===401&&!retried){await ensureToken(true);return sb(path,{method,body,headers,auth,retried:true})}
+    const t=await r.text().catch(()=>'');const e=new Error(t||('HTTP '+r.status));e.status=r.status;throw e;
+  }
   return r.status===204?null:r.json().catch(()=>null);
 }
-function storeSession(j){sync.session={access_token:j.access_token,refresh_token:j.refresh_token,expires_at:Date.now()+(j.expires_in||3600)*1000,user_id:j.user?.id||sync.session?.user_id};saveSync()}
-async function ensureToken(){
-  if(sync.session.expires_at-60000>Date.now()) return;
-  const j=await sb('/auth/v1/token?grant_type=refresh_token',{method:'POST',body:{refresh_token:sync.session.refresh_token},auth:false}); storeSession(j);
+function storeSession(j){
+  sync.session={access_token:j.access_token,refresh_token:j.refresh_token,expires_at:Date.now()+(j.expires_in||3600)*1000,user_id:j.user?.id||sync.session?.user_id};
+  delete sync.expired;
+  saveSync(true); /* grava na hora: o token antigo já não vale mais */
+}
+function sessionExpired(){
+  if(!sync) return;
+  sync.session=null; sync.expired=true; saveSync(true);
+  renderSyncUI(); renderWarn();
+  toast('A sessão da nuvem expirou. Seus dados estão salvos aqui. Toque em ☁ e digite só a senha.','err');
+}
+async function withAuthLock(fn){
+  if(navigator.locks&&navigator.locks.request) return navigator.locks.request('fc-auth-refresh',fn);
+  /* navegadores sem Web Locks: trava simples via localStorage (vale entre abas do mesmo aparelho) */
+  const K='fc_auth_lock_v1', id=Math.random().toString(36).slice(2), limite=Date.now()+15000;
+  const ler=()=>{try{return JSON.parse(localStorage.getItem(K)||'null')}catch{return null}};
+  for(;;){
+    const cur=ler();
+    if(!cur||cur.id===id||Date.now()-cur.ts>10000){
+      try{localStorage.setItem(K,JSON.stringify({id,ts:Date.now()}))}catch{}
+      await wait(60);
+      if(ler()?.id===id) break;
+    }
+    if(Date.now()>limite) break; /* nunca trava para sempre */
+    await wait(120+Math.random()*120);
+  }
+  try{return await fn()}finally{try{if(ler()?.id===id) localStorage.removeItem(K)}catch{}}
+}
+let refreshing=null;
+function ensureToken(force){
+  if(!force&&sync.session&&sync.session.expires_at-60000>Date.now()) return Promise.resolve();
+  if(refreshing) return refreshing;
+  const t0=performance.now();
+  refreshing=withAuthLock(async()=>{
+    /* se esperamos o lock, outra aba acabou de renovar: o localStorage entre processos chega com alguns ms de atraso */
+    if(performance.now()-t0>5) await wait(80);
+    adoptNewerSession(); /* outra aba pode ter renovado enquanto esperávamos o lock */
+    if(!sync.session){const e=new Error('sessão expirada');e.dead=true;throw e}
+    if(!force&&sync.session.expires_at-60000>Date.now()) return;
+    let usado=sync.session.refresh_token, tentativas=0;
+    for(;;){
+      try{
+        const j=await sb('/auth/v1/token?grant_type=refresh_token',{method:'POST',body:{refresh_token:usado},auth:false});
+        storeSession(j);
+        await wait(150); /* segura o lock até o token novo chegar às outras abas */
+        return;
+      }catch(e){
+        const rede=e instanceof TypeError||e.offline;
+        if(rede&&tentativas<1){tentativas++;await wait(1500);continue} /* mesmo token: o servidor aceita reenvio por alguns segundos */
+        if(rede) throw e; /* sem internet: mantém a sessão e tenta depois */
+        if(e.status===400||e.status===401||e.status===403){
+          /* talvez outra aba já tenha trocado o token: adota e tenta uma vez com ele */
+          const st=readSyncStore();
+          if(st?.session&&st.url===sync.url&&st.session.refresh_token!==usado&&tentativas<2){
+            tentativas=2; sync.session=st.session; usado=st.session.refresh_token;
+            if(st.session.expires_at-60000>Date.now()) return;
+            continue;
+          }
+          sessionExpired(); e.dead=true; throw e;
+        }
+        throw e;
+      }
+    }
+  }).finally(()=>{refreshing=null});
+  return refreshing;
 }
 function scheduleSync(){if(!sync?.session) return; clearTimeout(syncTimer); syncTimer=setTimeout(()=>syncNow(true),1500)}
 async function syncNow(quiet){
@@ -3813,7 +3852,8 @@ async function syncNow(quiet){
 
     sync.last=Date.now(); saveSync(); setSync('ok','Sincronizado');
   }catch(e){
-    if(e.status===401||e.status===400&&/refresh|token|JWT/i.test(e.message)) setSync('err','Entrar de novo');
+    if(e.dead||!sync?.session) setSync('err','Entrar de novo');
+    else if(e.status===401) {sessionExpired();setSync('err','Entrar de novo')}
     else if(e.offline||e instanceof TypeError) setSync('', 'Offline · salvo aqui');
     else {setSync('err','Erro de sync');console.warn(e); if(!quiet) toast('Falha ao sincronizar: '+String(e.message).slice(0,120),'err')}
   }finally{
@@ -3823,14 +3863,18 @@ async function syncNow(quiet){
 function renderSyncUI(){
   const on=!!sync?.session; $('sync-off').hidden=on; $('sync-on').hidden=!on;
   if(on){$('sync-info').textContent=`Conectado como ${sync.email||''}${sync.last?' · última sync '+new Date(sync.last).toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'}):''}`}
-  else {setSync('', 'Só neste aparelho'); if(sync){$('s-url').value=sync.url||'';$('s-key').value=sync.key||'';$('s-mail').value=sync.email||''}}
+  else {
+    if(sync?.expired) setSync('err','Entrar de novo'); else setSync('', 'Só neste aparelho');
+    if(sync){$('s-url').value=sync.url||'';$('s-key').value=sync.key||'';$('s-mail').value=sync.email||''}
+    $('sync-expired').hidden=!sync?.expired;
+  }
 }
 $('form-sync').addEventListener('submit',async e=>{
   e.preventDefault(); const url=$('s-url').value.trim(), key=$('s-key').value.trim(), email=$('s-mail').value.trim(), pass=$('s-pass').value;
   if(!/^https:\/\/[^\s/]+/.test(url)||!key||!email||!pass){toast('Preencha URL (https://…), chave, e-mail e senha.','err');return}
   sync={url,key,email,session:null};
-  try{const j=await sb('/auth/v1/token?grant_type=password',{method:'POST',body:{email,password:pass},auth:false}); storeSession(j); $('s-pass').value=''; toast('Conectado.'); await syncNow(false)}
-  catch(err){sync.session=null;saveSync();toast('Não consegui entrar: confira e-mail, senha e chave.','err');renderSyncUI()}
+  try{const j=await sb('/auth/v1/token?grant_type=password',{method:'POST',body:{email,password:pass},auth:false}); storeSession(j); $('s-pass').value=''; toast('Conectado.'); renderSyncUI(); await syncNow(false)}
+  catch(err){sync.session=null;saveSync(true);toast('Não consegui entrar: confira e-mail, senha e chave.','err');renderSyncUI()}
 });
 function syncOut(){sync=null;saveSync();renderSyncUI();renderWarn();toast('Desconectado. Os dados continuam neste aparelho.')}
 
@@ -3844,9 +3888,10 @@ function printMes(){
 
 /* ── Eventos ── */
 
+const sidebarPinned=()=>matchMedia('(min-width:900px)').matches;
 function collapseSidebarAfterAction(el){
   const side=document.querySelector('aside.top.sidebar');
-  if(side) side.classList.add('sidebar-after-action');
+  if(side&&!sidebarPinned()) side.classList.add('sidebar-after-action');
   if(el&&typeof el.blur==='function') el.blur();
 }
 function installSidebarAutoCollapse(){
@@ -3854,7 +3899,7 @@ function installSidebarAutoCollapse(){
   if(!side||side.dataset.autoCollapse==='1') return;
   side.dataset.autoCollapse='1';
   side.addEventListener('mouseleave',()=>side.classList.remove('sidebar-after-action'));
-  side.addEventListener('wheel',()=>side.classList.add('sidebar-after-action'),{passive:true});
+  side.addEventListener('wheel',()=>{if(!sidebarPinned())side.classList.add('sidebar-after-action')},{passive:true});
 }
 
 document.addEventListener('click',e=>{
@@ -3872,9 +3917,9 @@ document.addEventListener('click',e=>{
     case 'toggle-mes-atual':{const t0=todayYM();toggleMonth(t0.y,t0.m);break}
     case 'toggle-mes-view':toggleMonth(view.y,view.m);break;
     case 'goto-mes':view={y:+d.y,m:+d.m};renderMes();showTab('mes');break;
-    case 'mes-prev':view=view.m===0?{y:view.y-1,m:11}:{y:view.y,m:view.m-1};renderMes();break;
-    case 'mes-next':view=view.m===11?{y:view.y+1,m:0}:{y:view.y,m:view.m+1};renderMes();break;
-    case 'mes-hoje':view=todayYM();renderMes();break;
+    case 'mes-prev':view=view.m===0?{y:view.y-1,m:11}:{y:view.y,m:view.m-1};renderMes();animateIn($('sec-mes').querySelector('#m-list'));countUp($('m-total'));break;
+    case 'mes-next':view=view.m===11?{y:view.y+1,m:0}:{y:view.y,m:view.m+1};renderMes();animateIn($('sec-mes').querySelector('#m-list'));countUp($('m-total'));break;
+    case 'mes-hoje':view=todayYM();renderMes();animateIn($('sec-mes').querySelector('#m-list'));countUp($('m-total'));break;
     case 'parcela':openParcela(d.key);break;
     case 'pdf':printMes();break;
     case 'fc':fcRange=+d.n;renderResumo();break;
@@ -3888,6 +3933,7 @@ document.addEventListener('click',e=>{
     case 'bk-open':$('file-in').click();break;
     case 'snap':{const s=getSnaps().find(x=>String(x.ts)===d.ts);if(s&&confirm('Restaurar esta cópia? O estado atual vira uma cópia também e dá para desfazer.')){saveSnap('Antes de restaurar cópia');mutate(()=>{S=normalize(s.data)},'Cópia restaurada.');renderSnaps()}break}
     case 'verify':verify();break;
+    case 'filters-toggle':{const pn=document.querySelector('.filters-panel');const o=pn.toggleAttribute('data-open');t.setAttribute('aria-expanded',String(o));break}
     case 'sync-now':syncNow(false);break;
     case 'sync-out':syncOut();break;
   }
@@ -3898,18 +3944,66 @@ dlgClickOutside();
 installSidebarAutoCollapse();
 $('dlg-dados').addEventListener('close',()=>{
   const side=document.querySelector('aside.top.sidebar');
-  if(side) side.classList.add('sidebar-after-action');
+  if(side&&!sidebarPinned()) side.classList.add('sidebar-after-action');
   if(document.activeElement&&typeof document.activeElement.blur==='function') document.activeElement.blur();
 });
 function dlgClickOutside(){document.querySelectorAll('dialog').forEach(d=>d.addEventListener('click',e=>{if(e.target===d)d.close()}))}
 function themeIcon(){const dark=(document.documentElement.dataset.theme||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'))==='dark';$('theme-btn').innerHTML=`<svg class="ic"><use href="#i-${dark?'sun':'moon'}"/></svg>`}
 document.addEventListener('keydown',e=>{if((e.ctrlKey||e.metaKey)&&e.key==='z'&&!/INPUT|SELECT|TEXTAREA/.test(document.activeElement.tagName)&&undoSnap){e.preventDefault();undo()}});
-document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible'){renderAll();syncNow(true)}});
+document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible'){if(sync&&adoptNewerSession()) renderSyncUI();renderAll();syncNow(true)}});
+/* outra aba/app renovou ou encerrou a sessão: acompanha em vez de usar token velho */
+addEventListener('storage',e=>{
+  if(e.key!==SYNC_KEY) return;
+  let nv=null; try{nv=JSON.parse(e.newValue||'null')}catch{}
+  if(!nv||!sync||nv.url!==sync.url||nv.key!==sync.key||nv.email!==sync.email){sync=nv}   /* saiu / trocou de conta em outra aba */
+  else if(!nv.session){ if(nv.expired){sync.session=null;sync.expired=true} }              /* sessão encerrada em outra aba */
+  else adoptNewerSession();                                                               /* só aceita token mais novo, nunca volta atrás */
+  renderSyncUI(); renderWarn();
+});
 addEventListener('online',()=>syncNow(true));
 setInterval(()=>{if(sync?.session&&document.visibilityState==='visible')syncNow(true)},30000);
 
+
+/* ── Movimento: entrada escalonada, barras, gráfico e números ── */
+const CARD_SEL='.metric-card,.panel,.mcard,.tile,.pcard,.filters-panel,.month-overview,.month-total-card,.mkpi,.mgroup,.prow,.card-illus-wrap,.cards-intro,.venc-nudge,.alert,.empty,.pd-legend';
+const COUNT_SEL='#r-valor,#d-val,#d-paid,#d-pend,#m-total,.tile .val,.mkpi strong,.card-value-area strong';
+const reducedMotion=()=>matchMedia('(prefers-reduced-motion:reduce)').matches;
+function countUp(el,dur=850){
+  if(!el||reducedMotion()) return;
+  const original=el.textContent, money=/R\$/.test(original);
+  const num=parseFloat(original.replace(/[^\d,-]/g,'').replace(',','.'));
+  if(!isFinite(num)||num===0) return;
+  let last=null; const t0=performance.now();
+  const frame=now=>{
+    if(last!==null&&el.textContent!==last) return;             /* a tela atualizou o valor: não interfere */
+    const k=Math.min(1,(now-t0)/dur), e=1-Math.pow(1-k,3), v=num*e;
+    last=k>=1?original:(money?fmt(v):String(Math.round(v)));
+    el.textContent=last;
+    if(k<1) requestAnimationFrame(frame);
+  };
+  last=original; requestAnimationFrame(frame);
+}
+function animateIn(root,opts={}){
+  if(!root||reducedMotion()||!root.animate) return;
+  const ease='cubic-bezier(.2,.75,.25,1)';
+  const cards=[...root.querySelectorAll(CARD_SEL)].filter(e=>e.offsetParent!==null);
+  if(root.matches&&root.matches(CARD_SEL)&&root.offsetParent!==null) cards.unshift(root);
+  cards.forEach((e,i)=>e.animate([{opacity:0,transform:'translateY(18px)'},{opacity:1,transform:'none'}],
+    {duration:520,delay:Math.min(i,11)*42,easing:ease,fill:'backwards'}));
+  root.querySelectorAll('.bar>i,.mgroup-bar>i,.prow-progress>i,.card-limit>i').forEach((e,i)=>
+    e.animate([{transform:'scaleX(0)'},{transform:'scaleX(1)'}],{duration:800,delay:260+Math.min(i,8)*40,easing:ease,fill:'backwards'}));
+  root.querySelectorAll('.fc .b').forEach((e,i)=>
+    e.animate([{transform:'scaleY(0)'},{transform:'scaleY(1)'}],{duration:760,delay:240+i*70,easing:ease,fill:'backwards'}));
+  root.querySelectorAll('.donut').forEach(e=>e.animate([{opacity:0,transform:'translateY(14px)'},{opacity:1,transform:'none'}],{duration:700,delay:300,easing:ease,fill:'backwards'}));
+  if(!opts.noCount) root.querySelectorAll(COUNT_SEL).forEach(el=>countUp(el));
+}
+function pulse(el,color='rgba(93,214,44,.65)'){
+  if(!el||reducedMotion()||!el.animate) return;
+  el.animate([{boxShadow:`0 0 0 0 ${color}`},{boxShadow:'0 0 0 12px rgba(93,214,44,0)'}],{duration:620,easing:'ease-out'});
+}
+
 /* ── Boot ── */
-loadState(); touch(); autoSnap(); themeIcon(); renderAll(); renderSyncUI();
+loadState(); touch(); autoSnap(); themeIcon(); renderAll(); renderSyncUI(); animateIn($('sec-resumo'));
 if(sync?.session) syncNow(true);
 if('serviceWorker' in navigator && location.protocol.startsWith('http')) navigator.serviceWorker.register('sw.js').catch(()=>{});
 </script>

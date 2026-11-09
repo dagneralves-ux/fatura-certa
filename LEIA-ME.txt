@@ -1,21 +1,35 @@
-FATURA CERTA v20 | SINCRONIZACAO CLOUD-FIRST
+FATURA CERTA v22 | SESSAO ESTAVEL + INTERFACE MAIS LEGIVEL
 
-Correcao:
-- quando o dispositivo esta sem compras/dados locais, baixa a copia existente do Supabase;
-- usa dados.updatedAt e a coluna atualizado_em para comparar versoes;
-- filtra o registro remoto pelo user_id autenticado;
-- nao envia uma base local vazia quando a consulta nao encontra registro remoto;
-- se nao houver registro na nuvem e o dispositivo tiver dados locais, cria/atualiza o registro;
-- se ambos tiverem dados, compara os carimbos de atualizacao e aplica a versao mais recente;
-- cria snapshot local antes de substituir dados locais existentes por dados da nuvem;
-- verifica atualizacoes da nuvem a cada 30 segundos enquanto o app estiver aberto e visivel.
+SESSAO DO SUPABASE (fim do "Entrar de novo")
+- A renovacao do login agora e feita por uma aba de cada vez (lock entre abas / app instalado).
+- Antes de renovar ou gravar, o app le o token mais novo guardado no aparelho e nunca volta para um token velho.
+- O token novo e gravado na hora; se a rede cair no meio da renovacao, ele tenta de novo com seguranca.
+- Sem internet, a sessao NAO e descartada: o app mostra "Offline" e volta a sincronizar sozinho.
+- Se a sessao realmente expirar, URL, chave e e-mail ficam guardados e aparece um aviso: basta digitar a senha.
+- Logar no celular nao derruba o PC. So derrubaria se "Single session per user" estivesse ligado no Supabase (plano Pro).
 
-IMPORTANTE:
-- configurar a conexao Supabase em cada dispositivo com o mesmo projeto e o mesmo usuario;
-- no primeiro acesso do celular, entrar na sincronizacao para baixar a copia da nuvem;
-- se a nuvem nao retornar registro, o app avisa e nao envia dados vazios.
+INTERFACE
+- Card verde "Fatura do mes": texto escuro sobre verde-lima nos dois temas (antes era branco sobre verde).
+- Caixa "Marcar mes como pago" nao parece mais marcada quando esta vazia (desktop escuro).
+- Todos os textos tinham 7-10px; agora o minimo e 11px (rotulos) e 12px (textos de apoio).
+- Compras: filtros recolhiveis no celular (busca + botao Filtros com contador) e legenda dos chips de parcela.
+- Parcela em atraso agora aparece em vermelho (antes ficava verde, igual a "paga").
+- Por mes: indicadores em 2x2 no celular; "Vencidas" so fica vermelho se houver atraso.
+- Por mes: aviso para definir o dia de vencimento do cartao e "vence em N dias" no mes atual.
+- Resumo: alerta com o total combinado (atraso + fatura do mes = a pagar agora).
+- Grafico "Em aberto": sem categorias, mostra por loja (em vez de "Sem categoria 100%").
+- Barras de progresso no tema claro com trilho claro (antes pareciam 100% pretas).
+- Verde como texto no tema claro com tom mais escuro (contraste).
+- PC: barra lateral sempre aberta com nomes (telas >= 900px); sem "pulo" do conteudo no hover.
+- Nome unico "Resumo" no PC e no celular; chip de periodo mostra o mes atual.
+- Celular: sem repetir a marca no titulo; nuvem com bolinha de status; aviso de backup explicado.
 
-Preservado:
-- chave local fc_v2;
-- estrutura de compras, parcelas, pagamentos e cartoes;
-- telas, layout, temas, backups e importacao/exportacao.
+Dados, chave local fc_v2 e sincronizacao cloud-first preservados. Rode o Supabase_fatura.sql apenas se ainda nao rodou.
+
+MOVIMENTO NOS CARDS (v22)
+- Todos os cards sobem suavemente e ganham sombra e contorno verde ao passar o mouse; ao clicar, afundam de volta.
+- Ao abrir o app, trocar de aba ou mudar de mes, os cards entram em cascata (fade + subida).
+- Barras de progresso e colunas do grafico crescem; os valores em R$ contam ate o numero final.
+- Marcar parcela ou mes como pago gera um pulso verde; dialogos e avisos entram deslizando.
+- Cartoes ilustrados ganham um reflexo que passa pelo cartao no hover.
+- Os textos nunca mudam de tamanho, espacamento ou peso. Quem usa "reduzir movimento" no sistema fica sem animacoes.
